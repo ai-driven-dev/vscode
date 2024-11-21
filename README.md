@@ -1,4 +1,4 @@
-# 🌟 AI-Driven Dev VS Code Extension
+# 🧩 AI-Driven Dev {VSCode}
 
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)

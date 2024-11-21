@@ -32,7 +32,7 @@
         "workbench.editor.wrapTabs": {
           "type": "boolean",
           "default": true,
-          "description": "Wrap sdfghjkltabs for better visibility"
+          "description": "Wrap tabs for better visibility"
         },
         "workbench.editor.enablePreview": {
           "type": "boolean",
@@ -52,5 +52,22 @@
       }
     }
   },
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "build": "node setup.js",
+    "prepare": "husky install",
+    "publish-extension": "npm version minor && node setup.js && vsce package && vsce publish && rm *.vsix"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.0"
+  },
+  "lint-staged": {
+    "README.md": [
+      "npm run build"
+    ],
+    "settings.json": [
+      "npm run build"
+    ]
+  }
 }
