@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev Config",
   "description": "Better VSCode code configuration to improve AI developer experience",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "publisher": "ai-driven-dev",
   "repository": {
     "type": "git",
