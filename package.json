@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev Config",
   "description": "Better VSCode code configuration to improve AI developer experience",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "ai-driven-dev",
   "repository": {
     "type": "git",
@@ -56,7 +56,7 @@
   "scripts": {
     "build": "node setup.js",
     "prepare": "husky install",
-    "publish-extension": "node setup.js && vsce package && vsce publish && rm *.vsix"
+    "publish-extension": "node setup.js && vsce package && vsce publish && rm *.vsix && git add package.json && git commit -m \"chore: bump version\""
   },
   "devDependencies": {
     "husky": "^8.0.0",
