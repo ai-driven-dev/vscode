@@ -9,7 +9,7 @@
 
 ## 📦 Installation
 
-1. Install the extension from the VS Code Marketplace "AI-Driven Dev Config"
+1. Install the extension from the VS Code Marketplace "[AI-Driven Dev Config](https://marketplace.visualstudio.com/items?itemName=AI-Driven-Dev.ai-driven-dev)"
 2. Restart VS Code to apply the default settings
 3. You're ready to go! 🚀
 
