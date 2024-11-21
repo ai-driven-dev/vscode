@@ -1,0 +1,56 @@
+{
+  "name": "ai-driven-dev",
+  "displayName": "AI-Driven Dev Config",
+  "description": "Better VSCode code configuration to improve AI developer experience",
+  "version": "0.0.2",
+  "publisher": "ai-driven-dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ai-driven-dev/vscode.git"
+  },
+  "icon": "./icon.png",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Snippets",
+    "Other"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/typescriptreact.json"
+      }
+    ],
+    "configuration": {
+      "properties": {
+        "workbench.editor.wrapTabs": {
+          "type": "boolean",
+          "default": true,
+          "description": "Wrap sdfghjkltabs for better visibility"
+        },
+        "workbench.editor.enablePreview": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable preview mode for tabs"
+        },
+        "explorer.compactFolders": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable compact folder display"
+        },
+        "css.hover.documentation": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable CSS hover documentation"
+        }
+      }
+    }
+  },
+  "license": "GPL-3.0-or-later"
+}

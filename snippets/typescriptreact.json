@@ -1,0 +1,91 @@
+{
+  "Print to console": {
+    "prefix": "clg",
+    "body": [
+      "console.log('$1');",
+      "$2"
+    ],
+    "description": "Log output to console"
+  },
+  "Print to error": {
+    "prefix": "cle",
+    "body": [
+      "console.error('$1');",
+      "$2"
+    ],
+    "description": "Log output to error"
+  },
+  "JSON Stringify HTML": {
+    "prefix": "jss",
+    "body": [
+      "<pre style={{ height: \"200px\", overflow: \"auto\" }}><code>{JSON.stringify($1, null, 2)}</code></pre>"
+    ],
+    "description": "JSON Stringify HTML"
+  },
+  "useEffect": {
+    "prefix": "uef",
+    "body": [
+      "useEffect(() => {",
+      "  $1",
+      "}, [$2]);"
+    ],
+    "description": "useEffect"
+  },
+  "useCallback": {
+    "prefix": "ucb",
+    "body": [
+      "useCallback(() => {",
+      "  $1",
+      "}, [$2]);"
+    ],
+    "description": "useCallback"
+  },
+  "useMemo": {
+    "prefix": "umo",
+    "body": [
+      "useMemo(() => {",
+      "  $1",
+      "}, [$2]);"
+    ],
+    "description": "useMemo"
+  },
+  "useRef": {
+    "prefix": "ure",
+    "body": [
+      "useRef($1);"
+    ],
+    "description": "useRef"
+  },
+  "React FC": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface $1Props {",
+      "  $2",
+      "}",
+      "",
+      "const $1: React.FC<$1Props> = ({ $3 }) => {",
+      "  return (",
+      "    $4",
+      "  );",
+      "};",
+      "",
+      "export default $1;"
+    ],
+    "description": "React FC"
+  },
+  "React function component": {
+    "prefix": "edf",
+    "body": [
+      "type Props = {}",
+      "",
+      "export default function $1(props: Props): React.ReactElement {",
+      "  return (",
+      "    <>$2</>",
+      "  );",
+      "}"
+    ],
+    "description": "React function component"
+  }
+}
