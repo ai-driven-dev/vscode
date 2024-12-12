@@ -1,0 +1,7 @@
+{
+  "key": "ctrl+shift+v",
+  "command": "editor.action.pasteAs",
+  "args": {
+    "preferences": ["text.updateImports"]
+  }
+}
