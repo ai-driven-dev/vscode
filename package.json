@@ -14,7 +14,11 @@
   },
   "categories": [
     "Snippets",
+    "Extension Packs",
     "Other"
+  ],
+  "extensionPack": [
+    "ms-azuretools.vscode-docker"
   ],
   "contributes": {
     "snippets": [
@@ -48,19 +52,68 @@
           "type": "boolean",
           "default": false,
           "description": "Disable CSS hover documentation"
+        },
+        "telemetry.enableTelemetry": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable telemetry"
+        },
+        "telemetry.enableCrashReporter": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable telemetry"
+        },
+        "editor.pasteAs.preferences": {
+          "type": "array",
+          "default": [
+            "text.updateImports"
+          ],
+          "description": "Update imports on paste"
+        },
+        "editor.wordWrap": {
+          "type": "string",
+          "default": "on",
+          "description": "Menu tabs wrapped for better visibility"
+        },
+        "editor.wordWrapColumn": {
+          "type": "number",
+          "default": 80,
+          "description": "Menu tabs wrapped for better visibility"
+        },
+        "editor.wrappingIndent": {
+          "type": "string",
+          "default": "same",
+          "description": "Menu tabs wrapped for better visibility"
+        },
+        "workbench.editor.enablePreviewFromQuickOpen": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable preview mode for tabs"
         }
+      }
+    },
+    "keybindings": {
+      "key": "ctrl+shift+v",
+      "command": "editor.action.pasteAs",
+      "args": {
+        "preferences": [
+          "text.updateImports"
+        ]
       }
     }
   },
   "license": "GPL-3.0-or-later",
+  "type": "module",
   "scripts": {
     "build": "node setup.js",
     "prepare": "husky install",
-    "publish-extension": "node setup.js && vsce package && vsce publish && rm *.vsix && git add package.json && git commit -m \"chore: bump version\""
+    "publish-extension": "node setup.js && vsce package && vsce publish && rm *.vsix && git add package.json && git commit -m \"chore: bump version\"",
+    "test": "vitest --watch=false"
   },
   "devDependencies": {
     "husky": "^8.0.0",
-    "lint-staged": "^15.0.0"
+    "lint-staged": "^15.0.0",
+    "vitest": "^2.1.8"
   },
   "lint-staged": {
     "README.md": [
