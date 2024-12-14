@@ -1,7 +1,6 @@
 {
   /**
    ** TELEMETRY
-   ** 
    **/
 
    // Disable telemetry
@@ -10,7 +9,6 @@
 
   /** 
    ** EXPLORER
-   ** 
    **/
 
   // Disable compact folder display
@@ -18,34 +16,51 @@
 
   /** 
    ** EDITOR
-   ** 
    **/
 
   // Update imports on paste
   "editor.pasteAs.preferences": [
     "text.updateImports"
   ],
+  
   // Menu tabs wrapped for better visibility
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
   "editor.wrappingIndent": "same",
 
-  /***
+  /**
    ** WORKBENCH
-   **
-   ***/
+   **/
 
   // Wrap tabs for better visibility
   "workbench.editor.wrapTabs": true,
+
   // Disable preview mode for tabs
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
 
-  /***
+  /**
    ** CSS
-   **
-   ***/
+   **/
 
   // Disable CSS hover documentation
-  "css.hover.documentation": false
+  "css.hover.documentation": false,
+
+  /**
+   ** EXTENSIONS
+   **/
+
+   /** Markdown **/
+
+   // Update TOC on save
+   "markdown.extension.toc.updateOnSave": true,
+
+   /**
+    ** LANGUAGES
+    **/
+
+    /** Typescript **/
+
+    // Update imports on file move
+   "typescript.updateImportsOnFileMove.enabled": "always"
 }

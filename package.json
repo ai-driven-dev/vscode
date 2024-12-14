@@ -89,18 +89,35 @@
           "type": "boolean",
           "default": false,
           "description": "Disable preview mode for tabs"
+        },
+        "markdown.extension.toc.updateOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Update TOC on save"
+        },
+        "typescript.updateImportsOnFileMove.enabled": {
+          "type": "string",
+          "default": "always",
+          "description": "Update imports on file move"
         }
       }
     },
-    "keybindings": {
-      "key": "ctrl+shift+v",
-      "command": "editor.action.pasteAs",
-      "args": {
-        "preferences": [
-          "text.updateImports"
-        ]
+    "keybindings": [
+      {
+        "key": "ctrl+shift+v",
+        "command": "editor.action.pasteAs",
+        "args": {
+          "preferences": [
+            "text.updateImports"
+          ]
+        }
+      },
+      {
+        "key": "ctrl+shift+l",
+        "command": "editor.action.selectHighlights",
+        "when": "editorTextFocus"
       }
-    }
+    ]
   },
   "license": "GPL-3.0-or-later",
   "type": "module",

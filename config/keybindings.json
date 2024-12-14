@@ -1,7 +1,16 @@
-{
-  "key": "ctrl+shift+v",
-  "command": "editor.action.pasteAs",
-  "args": {
-    "preferences": ["text.updateImports"]
+[
+  {
+      // Auto-import when pasting code
+      "key": "ctrl+shift+v",
+      "command": "editor.action.pasteAs",
+      "args": {
+          "preferences": ["text.updateImports"]
+      }
+  },
+  {
+      // Select all occurrences of the current selection
+      "key": "ctrl+shift+l",
+      "command": "editor.action.selectHighlights",
+      "when": "editorTextFocus"
   }
-}
+]
