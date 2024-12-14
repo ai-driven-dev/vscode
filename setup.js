@@ -61,8 +61,7 @@ export async function readJsonFile(filePath) {
 
         return jsonData;
     } catch (error) {
-        console.error(`Error reading file ${filePath}:`, error);
-        return null;
+        throw new Error(`Failed to read or parse ${filePath}: ${error.message}`);
     }
 }
 
@@ -75,13 +74,8 @@ export async function writeJsonFile(filePath, data) {
 async function updatePackageJson() {
     try {
         const { data: settings, descriptions } = await readJsonFile(settingsPath);
-        if (!settings) return;
-
         const packageJson = await readJsonFile(packagePath);
-        if (!packageJson) return;
-
         const keybindings = await readJsonFile(keybindingsPath);
-        if (!keybindings) return;
 
         packageJson.contributes.configuration.properties = {
             ...packageJson.contributes.configuration.properties,
@@ -105,4 +99,7 @@ async function updatePackageJson() {
 }
 
 // Exécuter la fonction
-updatePackageJson();
+updatePackageJson().catch(error => {
+    console.error('Error during setup:', error);
+    process.exit(1);
+});

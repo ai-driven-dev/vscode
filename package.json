@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev Config",
   "description": "Better VSCode code configuration to improve AI developer experience",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "ai-driven-dev",
   "repository": {
     "type": "git",
@@ -18,7 +18,12 @@
     "Other"
   ],
   "extensionPack": [
-    "ms-azuretools.vscode-docker"
+    "ms-azuretools.vscode-docker",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-french",
+    "yzhang.markdown-all-in-one",
+    "DavidAnson.vscode-markdownlint",
+    "eamodio.gitlens"
   ],
   "contributes": {
     "snippets": [
@@ -99,6 +104,92 @@
           "type": "string",
           "default": "always",
           "description": "Update imports on file move"
+        },
+        "telemetry.telemetryLevel": {
+          "type": "string",
+          "default": "off",
+          "description": "Disable telemetry"
+        },
+        "continue.telemetryEnabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable telemetry"
+        },
+        "gitlens.telemetry.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable telemetry"
+        },
+        "editor.formatOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Format on save"
+        },
+        "editor.codeActionsOnSave": {
+          "type": "object",
+          "default": {
+            "source.fixAll.eslint": "explicit",
+            "source.organizeImports": "explicit",
+            "source.addMissingImports": "explicit"
+          },
+          "description": "Enable auto formatting"
+        },
+        "editor.formatOnPaste": {
+          "type": "boolean",
+          "default": true,
+          "description": "Update imports on paste"
+        },
+        "editor.minimap.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable preview mode"
+        },
+        "git.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable git"
+        },
+        "scm.diffDecorations": {
+          "type": "string",
+          "default": "all",
+          "description": "Git display info"
+        },
+        "explorer.decorations.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Git display info"
+        },
+        "git.statusBar.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Git display info"
+        },
+        "git.autofetch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable git"
+        },
+        "cSpell.userWords": {
+          "type": "array",
+          "default": [
+            "ai-driven-dev"
+          ],
+          "description": "cSpell"
+        },
+        "workbench.editor.decorations.badges": {
+          "type": "boolean",
+          "default": true,
+          "description": "Git display info"
+        },
+        "workbench.editor.showTabs": {
+          "type": "boolean",
+          "default": true,
+          "description": "Wrap tabs for better visibility"
+        },
+        "workbench.editor.tabSizing": {
+          "type": "string",
+          "default": "fit",
+          "description": "Wrap tabs for better visibility"
         }
       }
     },
@@ -124,6 +215,7 @@
   "scripts": {
     "build": "node setup.js",
     "prepare": "husky install",
+    "local-install": "node setup.js && code --install-extension *.vsix",
     "publish-extension": "node setup.js && vsce package && vsce publish && rm *.vsix && git add package.json && git commit -m \"chore: bump version\"",
     "test": "vitest --watch=false"
   },
@@ -136,7 +228,10 @@
     "README.md": [
       "npm run build"
     ],
-    "settings.json": [
+    "config/*.json": [
+      "npm run build"
+    ],
+    "config/**/*.json": [
       "npm run build"
     ]
   }

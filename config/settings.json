@@ -4,8 +4,11 @@
    **/
 
    // Disable telemetry
+   "telemetry.telemetryLevel": "off",
    "telemetry.enableTelemetry": false,
    "telemetry.enableCrashReporter": false,
+   "continue.telemetryEnabled": false,
+   "gitlens.telemetry.enabled": false,
 
   /** 
    ** EXPLORER
@@ -18,7 +21,18 @@
    ** EDITOR
    **/
 
+   // Format on save
+   "editor.formatOnSave": true,
+
+   // Enable auto formatting
+   "editor.codeActionsOnSave": {
+     "source.fixAll.eslint": "explicit",
+     "source.organizeImports": "explicit",
+     "source.addMissingImports": "explicit"
+   },
+
   // Update imports on paste
+  "editor.formatOnPaste": true,
   "editor.pasteAs.preferences": [
     "text.updateImports"
   ],
@@ -28,12 +42,31 @@
   "editor.wordWrapColumn": 80,
   "editor.wrappingIndent": "same",
 
+  // Disable preview mode
+  "editor.minimap.enabled": false,
+
+     /**
+    ** GIT
+    **/
+
+    // Enable git
+    "git.enabled": true,
+    "git.autofetch": true,
+
+    // Git display info
+    "scm.diffDecorations": "all",
+    "explorer.decorations.enabled": true,
+    "git.statusBar.enabled": true,
+    "workbench.editor.decorations.badges": true,
+
   /**
-   ** WORKBENCH
+   ** WORKBENCH (TABS)
    **/
 
   // Wrap tabs for better visibility
+  "workbench.editor.showTabs": true,
   "workbench.editor.wrapTabs": true,
+  "workbench.editor.tabSizing": "fit",
 
   // Disable preview mode for tabs
   "workbench.editor.enablePreview": false,
@@ -54,6 +87,11 @@
 
    // Update TOC on save
    "markdown.extension.toc.updateOnSave": true,
+
+   // cSpell
+   "cSpell.userWords": [
+    "ai-driven-dev"
+  ],
 
    /**
     ** LANGUAGES
