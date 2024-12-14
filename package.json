@@ -14,16 +14,7 @@
   },
   "categories": [
     "Snippets",
-    "Extension Packs",
     "Other"
-  ],
-  "extensionPack": [
-    "ms-azuretools.vscode-docker",
-    "streetsidesoftware.code-spell-checker",
-    "streetsidesoftware.code-spell-checker-french",
-    "yzhang.markdown-all-in-one",
-    "DavidAnson.vscode-markdownlint",
-    "eamodio.gitlens"
   ],
   "contributes": {
     "snippets": [
@@ -35,6 +26,13 @@
         "language": "typescriptreact",
         "path": "./config/snippets/typescriptreact.json"
       }
+    ],
+    "recommendations": [
+      "ms-azuretools.vscode-docker",
+      "streetsidesoftware.code-spell-checker",
+      "streetsidesoftware.code-spell-checker-french",
+      "yzhang.markdown-all-in-one",
+      "DavidAnson.vscode-markdownlint"
     ],
     "configuration": {
       "properties": {
@@ -227,7 +225,8 @@
         "key": "cmd+n",
         "command": "explorer.newFile"
       }
-    ]
+    ],
+    "unwantedRecommendations": []
   },
   "license": "GPL-3.0-or-later",
   "type": "module",

@@ -10,6 +10,7 @@ const __dirname = dirname(__filename);
 const settingsPath = join(__dirname, 'config', 'settings.json');
 const packagePath = join(__dirname, 'package.json');
 const keybindingsPath = join(__dirname, 'config', 'keybindings.json');
+const extensionsPath = join(__dirname, 'config', 'extensions.json');
 
 // Fonction pour nettoyer les commentaires JSON
 export function stripJSONComments(jsonString) {
@@ -75,6 +76,7 @@ async function updatePackageJson() {
     const { data: settings, descriptions } = await readJsonFile(settingsPath);
     const packageJson = await readJsonFile(packagePath);
     const keybindings = await readJsonFile(keybindingsPath);
+    const extensions = await readJsonFile(extensionsPath);
 
     packageJson.contributes.configuration.properties = {
         ...packageJson.contributes.configuration.properties,
@@ -89,6 +91,8 @@ async function updatePackageJson() {
     };
 
     packageJson.contributes.keybindings = keybindings;
+    packageJson.contributes.recommendations = extensions.recommendations;
+    packageJson.contributes.unwantedRecommendations = extensions.unwantedRecommendations;
 
     await writeJsonFile(packagePath, packageJson);
     console.log('Package.json updated successfully');
