@@ -3,8 +3,8 @@
 # Change to the root directory of the project
 cd "$(dirname "$0")/.."
 
-VSCE="./node_modules/.bin/vsce"
-OVSX="./node_modules/.bin/ovsx"
+echo "Publishing to Open VSX Registry and VS Code Marketplace..."
+echo "Current directory: $(pwd)"
 
 # Exit on error
 set -e
@@ -29,20 +29,22 @@ if [ -z "$OPEN_VSX_TOKEN" ]; then
 fi
 
 # Run tests
-npm run test
+npm run test --  --reporter=basic
 
 # Build the extension
 node setup.js
 
 # Package the extension
-$VSCE package
+echo "Packaging extension..."
+npx vsce package
 
 # Publish to Open VSX Registry
 echo "Publishing to Open VSX Registry..."
-$OVSX publish *.vsix --pat $OPEN_VSX_TOKEN
+npx ovsx publish *.vsix --pat $OPEN_VSX_TOKEN
 
 # Publish to VS Code Marketplace
-$VSCE publish
+echo "Publishing to VS Code Marketplace..."
+npx vsce publish
 
 # Clean up
 rm *.vsix
