@@ -26,10 +26,19 @@
    "editor.formatOnPaste": true,
    "editor.formatOnSaveMode": "modificationsIfAvailable",
    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+   // Format JSON
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "json.format.enable": true,
+
+   // Format Markdown
+   "[markdown]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "explicit"
+    }
+  },
 
    // Enable auto formatting
    "editor.codeActionsOnSave": {
@@ -87,6 +96,14 @@
 
    // Update TOC on save
    "markdown.extension.toc.updateOnSave": true,
+
+   /** Github Copilot **/
+
+   // Enable Copilot for all languages, including markdown
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true
+  },
 
    // cSpell
    "cSpell.userWords": [

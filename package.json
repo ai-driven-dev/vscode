@@ -83,6 +83,11 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
       "json.format.enable": true,
+      "[markdown]": {
+        "editor.codeActionsOnSave": {
+          "source.fixAll.markdownlint": "explicit"
+        }
+      },
       "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit",
         "source.organizeImports": "explicit",
@@ -104,6 +109,10 @@
       "workbench.editor.enablePreviewFromQuickOpen": false,
       "css.hover.documentation": false,
       "markdown.extension.toc.updateOnSave": true,
+      "github.copilot.enable": {
+        "*": true,
+        "markdown": true
+      },
       "cSpell.userWords": [
         "ai-driven-dev",
         "autofetch"
