@@ -1,11 +1,15 @@
 // setup.js
-const fs = require('fs');
-const path = require('path');
+import { readFile, writeFile } from 'fs/promises';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Chemins des fichiers
-const settingsPath = path.join(__dirname, 'config', 'settings.json');
-const packagePath = path.join(__dirname, 'package.json');
-const keybindingsPath = path.join(__dirname, 'config', 'keybindings.json');
+const settingsPath = join(__dirname, 'config', 'settings.json');
+const packagePath = join(__dirname, 'package.json');
+const keybindingsPath = join(__dirname, 'config', 'keybindings.json');
 
 // Fonction pour nettoyer les commentaires JSON
 export function stripJSONComments(jsonString) {
@@ -36,53 +40,68 @@ export function getDescriptionFromComments(fileContent, key) {
 }
 
 // Fonction pour lire le fichier JSON
-function readJsonFile(filePath) {
-    const content = fs.readFileSync(filePath, 'utf8');
-    const cleanContent = stripJSONComments(content);
-    const data = JSON.parse(cleanContent);
+export async function readJsonFile(filePath) {
+    try {
+        const data = await readFile(filePath, 'utf8');
+        const cleanContent = stripJSONComments(data);
+        const jsonData = JSON.parse(cleanContent);
 
-    // Si c'est le fichier settings.json, on récupère les descriptions depuis les commentaires
-    if (filePath === settingsPath) {
-        const rawContent = fs.readFileSync(filePath, 'utf8');
-        const descriptions = {};
-        Object.keys(data).forEach(key => {
-            const description = getDescriptionFromComments(rawContent, key);
-            if (description) {
-                descriptions[key] = description;
-            }
-        });
-        return { data, descriptions };
+        // Si c'est le fichier settings.json, on récupère les descriptions depuis les commentaires
+        if (filePath === settingsPath) {
+            const rawContent = await readFile(filePath, 'utf8');
+            const descriptions = {};
+            Object.keys(jsonData).forEach(key => {
+                const description = getDescriptionFromComments(rawContent, key);
+                if (description) {
+                    descriptions[key] = description;
+                }
+            });
+            return { data: jsonData, descriptions };
+        }
+
+        return jsonData;
+    } catch (error) {
+        console.error(`Error reading file ${filePath}:`, error);
+        return null;
     }
-
-    return data;
 }
 
 // Fonction pour écrire dans le fichier JSON
-function writeJsonFile(filePath, data) {
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+export async function writeJsonFile(filePath, data) {
+    await writeFile(filePath, JSON.stringify(data, null, 2));
 }
 
 // Fonction principale
-function updatePackageJson() {
-    const { data: settings, descriptions } = readJsonFile(settingsPath);
-    const packageJson = readJsonFile(packagePath);
-    const keybindings = readJsonFile(keybindingsPath);
+async function updatePackageJson() {
+    try {
+        const { data: settings, descriptions } = await readJsonFile(settingsPath);
+        if (!settings) return;
 
-    packageJson.contributes.configuration.properties = {
-        ...packageJson.contributes.configuration.properties,
-        ...Object.keys(settings).reduce((acc, key) => {
-            acc[key] = {
-                type: Array.isArray(settings[key]) ? 'array' : typeof settings[key],
-                default: settings[key],
-                description: descriptions[key] || ''
-            };
-            return acc;
-        }, {})
-    };
+        const packageJson = await readJsonFile(packagePath);
+        if (!packageJson) return;
 
-    packageJson.contributes.keybindings = keybindings;
+        const keybindings = await readJsonFile(keybindingsPath);
+        if (!keybindings) return;
 
-    writeJsonFile(packagePath, packageJson);
+        packageJson.contributes.configuration.properties = {
+            ...packageJson.contributes.configuration.properties,
+            ...Object.keys(settings).reduce((acc, key) => {
+                acc[key] = {
+                    type: Array.isArray(settings[key]) ? 'array' : typeof settings[key],
+                    default: settings[key],
+                    description: descriptions[key] || ''
+                };
+                return acc;
+            }, {})
+        };
+
+        packageJson.contributes.keybindings = keybindings;
+
+        await writeJsonFile(packagePath, packageJson);
+        console.log('Package.json updated successfully');
+    } catch (error) {
+        console.error('Error updating package.json:', error);
+    }
 }
 
 // Exécuter la fonction
