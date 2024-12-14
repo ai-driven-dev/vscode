@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev Config",
   "description": "Better VSCode code configuration to improve AI developer experience",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publisher": "ai-driven-dev",
   "repository": {
     "type": "git",
@@ -34,193 +34,6 @@
       "yzhang.markdown-all-in-one",
       "DavidAnson.vscode-markdownlint"
     ],
-    "configuration": {
-      "properties": {
-        "workbench.editor.wrapTabs": {
-          "type": "boolean",
-          "default": true,
-          "description": "Wrap tabs for better visibility"
-        },
-        "workbench.editor.enablePreview": {
-          "type": "boolean",
-          "default": false,
-          "description": "Disable preview mode for tabs"
-        },
-        "explorer.compactFolders": {
-          "type": "boolean",
-          "default": false,
-          "description": "Disable compact folder display"
-        },
-        "css.hover.documentation": {
-          "type": "boolean",
-          "default": false,
-          "description": "Disable CSS hover documentation"
-        },
-        "telemetry.enableTelemetry": {
-          "type": "boolean",
-          "default": false,
-          "description": "Disable telemetry"
-        },
-        "telemetry.enableCrashReporter": {
-          "type": "boolean",
-          "default": false,
-          "description": "Disable telemetry"
-        },
-        "editor.pasteAs.preferences": {
-          "type": "array",
-          "default": [
-            "text.updateImports"
-          ],
-          "description": "Update imports on paste"
-        },
-        "editor.wordWrap": {
-          "type": "string",
-          "default": "on",
-          "description": "Menu tabs wrapped for better visibility"
-        },
-        "editor.wordWrapColumn": {
-          "type": "number",
-          "default": 80,
-          "description": "Menu tabs wrapped for better visibility"
-        },
-        "editor.wrappingIndent": {
-          "type": "string",
-          "default": "same",
-          "description": "Menu tabs wrapped for better visibility"
-        },
-        "workbench.editor.enablePreviewFromQuickOpen": {
-          "type": "boolean",
-          "default": false,
-          "description": "Disable preview mode for tabs"
-        },
-        "markdown.extension.toc.updateOnSave": {
-          "type": "boolean",
-          "default": true,
-          "description": "Update TOC on save"
-        },
-        "typescript.updateImportsOnFileMove.enabled": {
-          "type": "string",
-          "default": "always",
-          "description": "Update imports on file move"
-        },
-        "telemetry.telemetryLevel": {
-          "type": "string",
-          "default": "off",
-          "description": "Disable telemetry"
-        },
-        "continue.telemetryEnabled": {
-          "type": "boolean",
-          "default": false,
-          "description": "Disable telemetry"
-        },
-        "gitlens.telemetry.enabled": {
-          "type": "boolean",
-          "default": false,
-          "description": "Disable telemetry"
-        },
-        "editor.formatOnSave": {
-          "type": "boolean",
-          "default": true,
-          "description": "Format on save"
-        },
-        "editor.codeActionsOnSave": {
-          "type": "object",
-          "default": {
-            "source.fixAll.eslint": "explicit",
-            "source.organizeImports": "explicit",
-            "source.addMissingImports": "explicit"
-          },
-          "description": "Enable auto formatting"
-        },
-        "editor.formatOnPaste": {
-          "type": "boolean",
-          "default": true,
-          "description": "Update imports on paste"
-        },
-        "editor.minimap.enabled": {
-          "type": "boolean",
-          "default": false,
-          "description": "Disable preview mode"
-        },
-        "git.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable git"
-        },
-        "scm.diffDecorations": {
-          "type": "string",
-          "default": "all",
-          "description": "Git display info"
-        },
-        "explorer.decorations.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Git display info"
-        },
-        "git.statusBar.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Git display info"
-        },
-        "git.autofetch": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable git"
-        },
-        "cSpell.userWords": {
-          "type": "array",
-          "default": [
-            "ai-driven-dev"
-          ],
-          "description": "cSpell"
-        },
-        "workbench.editor.decorations.badges": {
-          "type": "boolean",
-          "default": true,
-          "description": "Git display info"
-        },
-        "workbench.editor.showTabs": {
-          "type": "boolean",
-          "default": true,
-          "description": "Wrap tabs for better visibility"
-        },
-        "workbench.editor.tabSizing": {
-          "type": "string",
-          "default": "fit",
-          "description": "Wrap tabs for better visibility"
-        },
-        "git.confirmSync": {
-          "type": "boolean",
-          "default": false,
-          "description": "Enable git"
-        },
-        "windsurf.autocompleteSpeed": {
-          "type": "string",
-          "default": "fast",
-          "description": "Windsurf"
-        },
-        "windsurf.enableModelBasedAutoExecution": {
-          "type": "boolean",
-          "default": true,
-          "description": "Windsurf"
-        },
-        "files.autoSave": {
-          "type": "string",
-          "default": "afterDelay",
-          "description": "Auto save"
-        },
-        "files.autoSaveDelay": {
-          "type": "number",
-          "default": 500,
-          "description": "Auto save"
-        },
-        "files.eol": {
-          "type": "string",
-          "default": "\n",
-          "description": "End of line"
-        }
-      }
-    },
     "keybindings": [
       {
         "key": "ctrl+shift+v",
@@ -241,14 +54,59 @@
         "command": "explorer.newFile"
       }
     ],
-    "unwantedRecommendations": []
+    "unwantedRecommendations": [],
+    "configurationDefaults": {
+      "telemetry.telemetryLevel": "off",
+      "telemetry.enableTelemetry": false,
+      "telemetry.enableCrashReporter": false,
+      "continue.telemetryEnabled": false,
+      "gitlens.telemetry.enabled": false,
+      "explorer.compactFolders": false,
+      "files.autoSave": "afterDelay",
+      "files.autoSaveDelay": 500,
+      "files.eol": "\n",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "explicit",
+        "source.addMissingImports": "explicit"
+      },
+      "editor.formatOnPaste": true,
+      "editor.pasteAs.preferences": [
+        "text.updateImports"
+      ],
+      "editor.wordWrap": "on",
+      "editor.wordWrapColumn": 80,
+      "editor.wrappingIndent": "same",
+      "editor.minimap.enabled": false,
+      "git.enabled": true,
+      "git.autofetch": true,
+      "git.confirmSync": false,
+      "scm.diffDecorations": "all",
+      "explorer.decorations.enabled": true,
+      "git.statusBar.enabled": true,
+      "workbench.editor.decorations.badges": true,
+      "workbench.editor.showTabs": true,
+      "workbench.editor.wrapTabs": true,
+      "workbench.editor.tabSizing": "fit",
+      "workbench.editor.enablePreview": false,
+      "workbench.editor.enablePreviewFromQuickOpen": false,
+      "css.hover.documentation": false,
+      "markdown.extension.toc.updateOnSave": true,
+      "cSpell.userWords": [
+        "ai-driven-dev"
+      ],
+      "windsurf.autocompleteSpeed": "fast",
+      "windsurf.enableModelBasedAutoExecution": true,
+      "typescript.updateImportsOnFileMove.enabled": "always"
+    }
   },
   "license": "GPL-3.0-or-later",
   "type": "module",
   "scripts": {
     "build": "node setup.js",
     "prepare": "husky install",
-    "local-install": "node setup.js && code --install-extension *.vsix",
+    "local-install": "node setup.js && npx vsce package && code --install-extension *.vsix && rm -rf *.vsix",
     "publish": "bash ./scripts/publish.sh",
     "test": "vitest --watch=false"
   },
