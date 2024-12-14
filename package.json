@@ -32,7 +32,8 @@
       "streetsidesoftware.code-spell-checker",
       "streetsidesoftware.code-spell-checker-french",
       "yzhang.markdown-all-in-one",
-      "DavidAnson.vscode-markdownlint"
+      "DavidAnson.vscode-markdownlint",
+      "esbenp.prettier-vscode"
     ],
     "keybindings": [
       {
@@ -57,6 +58,15 @@
       {
         "key": "cmd+n",
         "command": "explorer.newFile"
+      },
+      {
+        "key": "ctrl+s",
+        "command": "typescript.removeUnusedImports"
+      },
+      {
+        "key": "ctrl+s",
+        "command": "-markdown.extension.toc.update",
+        "when": "resourceExtname == .md"
       }
     ],
     "unwantedRecommendations": [],
@@ -66,12 +76,18 @@
       "files.autoSaveDelay": 500,
       "files.eol": "\n",
       "editor.formatOnSave": true,
+      "editor.formatOnPaste": true,
+      "editor.formatOnSaveMode": "modificationsIfAvailable",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "json.format.enable": true,
       "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit",
         "source.organizeImports": "explicit",
         "source.addMissingImports": "explicit"
       },
-      "editor.formatOnPaste": true,
       "editor.wordWrap": "on",
       "editor.wordWrapColumn": 80,
       "editor.wrappingIndent": "same",
@@ -89,10 +105,17 @@
       "css.hover.documentation": false,
       "markdown.extension.toc.updateOnSave": true,
       "cSpell.userWords": [
-        "ai-driven-dev"
+        "ai-driven-dev",
+        "autofetch"
       ],
       "windsurf.autocompleteSpeed": "fast",
       "windsurf.enableModelBasedAutoExecution": true,
+      "prettier.requireConfig": true,
+      "prettier.tabWidth": 2,
+      "prettier.useTabs": false,
+      "prettier.singleQuote": false,
+      "prettier.trailingComma": "none",
+      "prettier.bracketSpacing": true,
       "typescript.updateImportsOnFileMove.enabled": "always"
     }
   },
@@ -101,7 +124,7 @@
   "scripts": {
     "build": "node setup.js",
     "prepare": "husky install",
-    "local-install": "npm run test &&node setup.js && npx vsce package && code --install-extension *.vsix && rm -rf *.vsix",
+    "local-install": "npm run test && node setup.js && npx vsce package && code --install-extension *.vsix && cursor --install-extension *.vsix && rm -rf *.vsix",
     "publish": "bash ./scripts/publish.sh",
     "test": "vitest --watch=false"
   },

@@ -9,7 +9,9 @@
       // Markdown All in One
       "yzhang.markdown-all-in-one",
       // Markdown Linting
-      "DavidAnson.vscode-markdownlint"
+      "DavidAnson.vscode-markdownlint",
+      // Prettier
+      "esbenp.prettier-vscode"
   ],
   "unwantedRecommendations": []
 }

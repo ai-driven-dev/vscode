@@ -23,6 +23,13 @@
 
    // Format on save
    "editor.formatOnSave": true,
+   "editor.formatOnPaste": true,
+   "editor.formatOnSaveMode": "modificationsIfAvailable",
+   "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "json.format.enable": true,
 
    // Enable auto formatting
    "editor.codeActionsOnSave": {
@@ -30,9 +37,6 @@
      "source.organizeImports": "explicit",
      "source.addMissingImports": "explicit"
    },
-
-  // Update imports on paste
-  "editor.formatOnPaste": true,
   
   // Menu tabs wrapped for better visibility
   "editor.wordWrap": "on",
@@ -86,12 +90,23 @@
 
    // cSpell
    "cSpell.userWords": [
-    "ai-driven-dev"
+    "ai-driven-dev",
+    "autofetch"
   ],
 
-  // Windsurf
+  // Windsurf : fast autocomplete
   "windsurf.autocompleteSpeed": "fast",
+
+  // Windsurf  : auto accept suggestions from chat
   "windsurf.enableModelBasedAutoExecution": true,
+
+  // Prettier
+  "prettier.requireConfig": true,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.singleQuote": false,
+  "prettier.trailingComma": "none",
+  "prettier.bracketSpacing": true,
 
    /**
     ** LANGUAGES

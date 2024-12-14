@@ -1,10 +1,11 @@
 [
 // Delete line (because of Cursor)
       {
-        "key": "ctrl+shift+k",
+           "key": "ctrl+shift+k",
         "command": "editor.action.deleteLines",
         "when": "editorTextFocus"
     },
+
   // Auto-import when pasting code
   {
       "key": "ctrl+shift+v",
@@ -25,5 +26,18 @@
   {
     "key": "cmd+n",
     "command": "explorer.newFile"
+  },
+
+  // Remove unused imports
+  {
+    "key": "ctrl+s",
+    "command": "typescript.removeUnusedImports"
+  },
+
+  // Update TOC on save
+  {
+    "key": "ctrl+s",
+    "command": "-markdown.extension.toc.update",
+    "when": "resourceExtname == .md"
   }
 ]
