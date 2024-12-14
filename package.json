@@ -190,6 +190,21 @@
           "type": "string",
           "default": "fit",
           "description": "Wrap tabs for better visibility"
+        },
+        "git.confirmSync": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable git"
+        },
+        "windsurf.autocompleteSpeed": {
+          "type": "string",
+          "default": "fast",
+          "description": "Windsurf"
+        },
+        "windsurf.enableModelBasedAutoExecution": {
+          "type": "boolean",
+          "default": true,
+          "description": "Windsurf"
         }
       }
     },
