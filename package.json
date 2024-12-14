@@ -24,11 +24,11 @@
     "snippets": [
       {
         "language": "typescript",
-        "path": "./snippets/typescript.json"
+        "path": "./config/snippets/typescript.json"
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/typescriptreact.json"
+        "path": "./config/snippets/typescriptreact.json"
       }
     ],
     "configuration": {

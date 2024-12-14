@@ -3,9 +3,9 @@ const fs = require('fs');
 const path = require('path');
 
 // Chemins des fichiers
-const settingsPath = path.join(__dirname, 'settings.json');
+const settingsPath = path.join(__dirname, 'config', 'settings.json');
 const packagePath = path.join(__dirname, 'package.json');
-const keybindingsPath = path.join(__dirname, 'keybindings.json');
+const keybindingsPath = path.join(__dirname, 'config', 'keybindings.json');
 
 // Fonction pour nettoyer les commentaires JSON
 export function stripJSONComments(jsonString) {
