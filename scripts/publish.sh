@@ -34,10 +34,6 @@ npm run test --  --reporter=basic
 # Build the extension
 node setup.js
 
-git add package.json
-git commit -m "chore: update package.json"
-git push
-
 # Package the extension
 echo "Packaging extension..."
 npx vsce package
