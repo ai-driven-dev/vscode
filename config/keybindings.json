@@ -1,4 +1,10 @@
 [
+// Delete line (because of Cursor)
+      {
+        "key": "ctrl+shift+k",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus"
+    },
   // Auto-import when pasting code
   {
       "key": "ctrl+shift+v",
@@ -8,7 +14,7 @@
       }
   },
 
-  // Select all occurrences of the current selection
+  // Select all occurrences of the current selection (because of Windsurf)
   {
       "key": "ctrl+shift+l",
       "command": "editor.action.selectHighlights",

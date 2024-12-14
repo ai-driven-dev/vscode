@@ -1,15 +1,4 @@
 {
-  /**
-   ** TELEMETRY
-   **/
-
-   // Disable telemetry
-   "telemetry.telemetryLevel": "off",
-   "telemetry.enableTelemetry": false,
-   "telemetry.enableCrashReporter": false,
-   "continue.telemetryEnabled": false,
-   "gitlens.telemetry.enabled": false,
-
   /** 
    ** EXPLORER
    **/
@@ -44,9 +33,6 @@
 
   // Update imports on paste
   "editor.formatOnPaste": true,
-  "editor.pasteAs.preferences": [
-    "text.updateImports"
-  ],
   
   // Menu tabs wrapped for better visibility
   "editor.wordWrap": "on",
@@ -76,7 +62,7 @@
    **/
 
   // Wrap tabs for better visibility
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": "multiple",
   "workbench.editor.wrapTabs": true,
   "workbench.editor.tabSizing": "fit",
 

@@ -56,11 +56,6 @@
     ],
     "unwantedRecommendations": [],
     "configurationDefaults": {
-      "telemetry.telemetryLevel": "off",
-      "telemetry.enableTelemetry": false,
-      "telemetry.enableCrashReporter": false,
-      "continue.telemetryEnabled": false,
-      "gitlens.telemetry.enabled": false,
       "explorer.compactFolders": false,
       "files.autoSave": "afterDelay",
       "files.autoSaveDelay": 500,
@@ -72,9 +67,6 @@
         "source.addMissingImports": "explicit"
       },
       "editor.formatOnPaste": true,
-      "editor.pasteAs.preferences": [
-        "text.updateImports"
-      ],
       "editor.wordWrap": "on",
       "editor.wordWrapColumn": 80,
       "editor.wrappingIndent": "same",
@@ -86,7 +78,7 @@
       "explorer.decorations.enabled": true,
       "git.statusBar.enabled": true,
       "workbench.editor.decorations.badges": true,
-      "workbench.editor.showTabs": true,
+      "workbench.editor.showTabs": "multiple",
       "workbench.editor.wrapTabs": true,
       "workbench.editor.tabSizing": "fit",
       "workbench.editor.enablePreview": false,
