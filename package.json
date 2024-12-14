@@ -203,6 +203,21 @@
           "type": "boolean",
           "default": true,
           "description": "Windsurf"
+        },
+        "files.autoSave": {
+          "type": "string",
+          "default": "afterDelay",
+          "description": "Auto save"
+        },
+        "files.autoSaveDelay": {
+          "type": "number",
+          "default": 500,
+          "description": "Auto save"
+        },
+        "files.eol": {
+          "type": "string",
+          "default": "\n",
+          "description": "End of line"
         }
       }
     },
