@@ -36,6 +36,11 @@
     ],
     "keybindings": [
       {
+        "key": "ctrl+shift+k",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus"
+      },
+      {
         "key": "ctrl+shift+v",
         "command": "editor.action.pasteAs",
         "args": {
