@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Change to the root directory of the project
+cd "$(dirname "$0")/.."
+
+VSCE="./node_modules/.bin/vsce"
+OVSX="./node_modules/.bin/ovsx"
+
+# Exit on error
+set -e
+
+# Load environment variables
+if [ ! -f .env ]; then
+    echo "Error: .env file not found"
+    echo "Please create a .env file based on .env.example"
+    exit 1
+fi
+
+# Source the .env file
+set -a
+source .env
+set +a
+
+# Verify OPEN_VSX_TOKEN is set
+if [ -z "$OPEN_VSX_TOKEN" ]; then
+    echo "Error: OPEN_VSX_TOKEN is not set in .env file"
+    echo "Please add your Open VSX token to .env file"
+    exit 1
+fi
+
+# Run tests
+npm run test
+
+# Build the extension
+node setup.js
+
+# Package the extension
+$VSCE package
+
+# Publish to Open VSX Registry
+echo "Publishing to Open VSX Registry..."
+$OVSX publish *.vsix --pat $OPEN_VSX_TOKEN
+
+# Publish to VS Code Marketplace
+$VSCE publish
+
+# Clean up
+rm *.vsix

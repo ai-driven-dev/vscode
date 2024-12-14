@@ -1,16 +1,23 @@
 [
+  // Auto-import when pasting code
   {
-      // Auto-import when pasting code
       "key": "ctrl+shift+v",
       "command": "editor.action.pasteAs",
       "args": {
           "preferences": ["text.updateImports"]
       }
   },
+
+  // Select all occurrences of the current selection
   {
-      // Select all occurrences of the current selection
       "key": "ctrl+shift+l",
       "command": "editor.action.selectHighlights",
       "when": "editorTextFocus"
+  },
+
+ // Create a new file in the current directory (in explorer view)
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFile"
   }
 ]

@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev Config",
   "description": "Better VSCode code configuration to improve AI developer experience",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "ai-driven-dev",
   "repository": {
     "type": "git",
@@ -207,6 +207,10 @@
         "key": "ctrl+shift+l",
         "command": "editor.action.selectHighlights",
         "when": "editorTextFocus"
+      },
+      {
+        "key": "cmd+n",
+        "command": "explorer.newFile"
       }
     ]
   },
@@ -216,13 +220,15 @@
     "build": "node setup.js",
     "prepare": "husky install",
     "local-install": "node setup.js && code --install-extension *.vsix",
-    "publish-extension": "node setup.js && vsce package && vsce publish && rm *.vsix && git add package.json && git commit -m \"chore: bump version\"",
+    "publish": "bash ./scripts/publish.sh",
     "test": "vitest --watch=false"
   },
   "devDependencies": {
     "husky": "^8.0.0",
     "lint-staged": "^15.0.0",
-    "vitest": "^2.1.8"
+    "ovsx": "^0.10.1",
+    "vitest": "^2.1.8",
+    "vsce": "^2.15.0"
   },
   "lint-staged": {
     "README.md": [

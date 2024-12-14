@@ -72,30 +72,26 @@ export async function writeJsonFile(filePath, data) {
 
 // Fonction principale
 async function updatePackageJson() {
-    try {
-        const { data: settings, descriptions } = await readJsonFile(settingsPath);
-        const packageJson = await readJsonFile(packagePath);
-        const keybindings = await readJsonFile(keybindingsPath);
+    const { data: settings, descriptions } = await readJsonFile(settingsPath);
+    const packageJson = await readJsonFile(packagePath);
+    const keybindings = await readJsonFile(keybindingsPath);
 
-        packageJson.contributes.configuration.properties = {
-            ...packageJson.contributes.configuration.properties,
-            ...Object.keys(settings).reduce((acc, key) => {
-                acc[key] = {
-                    type: Array.isArray(settings[key]) ? 'array' : typeof settings[key],
-                    default: settings[key],
-                    description: descriptions[key] || ''
-                };
-                return acc;
-            }, {})
-        };
+    packageJson.contributes.configuration.properties = {
+        ...packageJson.contributes.configuration.properties,
+        ...Object.keys(settings).reduce((acc, key) => {
+            acc[key] = {
+                type: Array.isArray(settings[key]) ? 'array' : typeof settings[key],
+                default: settings[key],
+                description: descriptions[key] || ''
+            };
+            return acc;
+        }, {})
+    };
 
-        packageJson.contributes.keybindings = keybindings;
+    packageJson.contributes.keybindings = keybindings;
 
-        await writeJsonFile(packagePath, packageJson);
-        console.log('Package.json updated successfully');
-    } catch (error) {
-        console.error('Error updating package.json:', error);
-    }
+    await writeJsonFile(packagePath, packageJson);
+    console.log('Package.json updated successfully');
 }
 
 // Exécuter la fonction
