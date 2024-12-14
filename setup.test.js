@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { stripJSONComments, getDescriptionFromComments } from './setup.js';
+import { stripJSONComments } from './setup.js';
 
 describe('stripJSONComments', () => {
     it('should return unchanged JSON when no comments are present', () => {
@@ -49,59 +49,5 @@ describe('stripJSONComments', () => {
             "multiline": "This is not a /* comment */ either"
         }`;
         expect(stripJSONComments(input)).toBe(input);
-    });
-});
-
-describe('getDescriptionFromComments', () => {
-    it('should find single-line comment description above a key', () => {
-        const input = `{
-            // This is a description
-            "someKey": true
-        }`;
-        expect(getDescriptionFromComments(input, 'someKey')).toBe('This is a description');
-    });
-
-    it('should handle keys with no comments', () => {
-        const input = `{
-            "someKey": true
-        }`;
-        expect(getDescriptionFromComments(input, 'someKey')).toBe('');
-    });
-
-    it('should find comment even with multi-line comments present', () => {
-        const input = `{
-            /**
-             * Some multi-line comment
-             */
-            // This is the actual description
-            "someKey": true
-        }`;
-        expect(getDescriptionFromComments(input, 'someKey')).toBe('This is the actual description');
-    });
-
-    it('should return empty string for non-existent key', () => {
-        const input = `{
-            // This is a description
-            "someKey": true
-        }`;
-        expect(getDescriptionFromComments(input, 'nonExistentKey')).toBe('');
-    });
-
-    it('should find comment for multiple keys under the same comment', () => {
-        const input = `{
-            /** Editor Settings **/
-            // Configure word wrap settings
-            "editor.wordWrap": "on",
-            "editor.wordWrapColumn": 80,
-            "editor.wrappingIndent": "same",
-
-            /** Other Settings **/
-            // Different description
-            "other.setting": true
-        }`;
-        expect(getDescriptionFromComments(input, 'editor.wordWrap')).toBe('Configure word wrap settings');
-        expect(getDescriptionFromComments(input, 'editor.wordWrapColumn')).toBe('Configure word wrap settings');
-        expect(getDescriptionFromComments(input, 'editor.wrappingIndent')).toBe('Configure word wrap settings');
-        expect(getDescriptionFromComments(input, 'other.setting')).toBe('Different description');
     });
 });

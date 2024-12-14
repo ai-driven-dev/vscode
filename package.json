@@ -106,7 +106,7 @@
   "scripts": {
     "build": "node setup.js",
     "prepare": "husky install",
-    "local-install": "node setup.js && npx vsce package && code --install-extension *.vsix && rm -rf *.vsix",
+    "local-install": "npm run test &&node setup.js && npx vsce package && code --install-extension *.vsix && rm -rf *.vsix",
     "publish": "bash ./scripts/publish.sh",
     "test": "vitest --watch=false"
   },
