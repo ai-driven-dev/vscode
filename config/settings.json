@@ -52,6 +52,7 @@
     // Enable git
     "git.enabled": true,
     "git.autofetch": true,
+    "git.confirmSync": false,
 
     // Git display info
     "scm.diffDecorations": "all",
@@ -92,6 +93,10 @@
    "cSpell.userWords": [
     "ai-driven-dev"
   ],
+
+  // Windsurf
+  "windsurf.autocompleteSpeed": "fast",
+  "windsurf.enableModelBasedAutoExecution": true,
 
    /**
     ** LANGUAGES
