@@ -53,8 +53,6 @@
 
     // Git display info
     "scm.diffDecorations": "all",
-    "explorer.decorations.enabled": true,
-    "git.statusBar.enabled": true,
     "workbench.editor.decorations.badges": true,
 
   /**
