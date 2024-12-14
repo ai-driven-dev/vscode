@@ -18,6 +18,17 @@
   "explorer.compactFolders": false,
 
   /** 
+   ** FILES
+   **/
+
+   // Auto save
+   "files.autoSave": "afterDelay",
+   "files.autoSaveDelay": 500,
+
+   // End of line
+   "files.eol": "\n",
+
+  /** 
    ** EDITOR
    **/
 
