@@ -7,3 +7,4 @@ scripts/
 setup.js
 setup.test.js
 config/
+src/

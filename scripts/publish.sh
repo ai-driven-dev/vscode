@@ -32,11 +32,12 @@ fi
 npm run test --  --reporter=basic
 
 # Build the extension
-npm run compile # compile the extension
 node setup.js # generate package.json
 
 # Package the extension
 echo "Packaging extension..."
+cd extension
+npm run compile # compile the extension
 npx vsce package
 
 # Publish to Open VSX Registry
