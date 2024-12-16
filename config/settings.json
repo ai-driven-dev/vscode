@@ -31,6 +31,9 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "json.format.enable": true,
 
    // Format Markdown
@@ -118,12 +121,21 @@
   "windsurf.enableModelBasedAutoExecution": true,
 
   // Prettier
-  "prettier.requireConfig": true,
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
   "prettier.singleQuote": false,
   "prettier.trailingComma": "none",
   "prettier.bracketSpacing": true,
+  "prettier": {
+    "overrides": [
+        {
+            "files": "*.jsonc",
+            "options": {
+                "parser": "json"
+            }
+        }
+    ]
+  },
 
    /**
     ** LANGUAGES
