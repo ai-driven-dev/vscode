@@ -3,26 +3,26 @@
 # Enable strict error handling
 set -e
 
-# Security and dependency updates
-echo "Updating all dependencies to latest versions..."
+# # Security and dependency updates
+# echo "Updating all dependencies to latest versions..."
 
-# Update npm itself first
-npm install -g npm@latest
+# # Update npm itself first
+# npm install -g npm@latest
 
-# Clean install and update dependencies
-rm -rf node_modules package-lock.json
-npm install
+# # Clean install and update dependencies
+# rm -rf node_modules package-lock.json
+# npm install
 
 
-# Update specific packages with known issues
-npm update --save
-npm upgrade --save
+# # Update specific packages with known issues
+# npm update --save
+# npm upgrade --save
 
-# Pin @types/vscode version because engine is 1.93.1
-npm install --save-dev @types/vscode@1.93.0
+# # Pin @types/vscode version because engine is 1.93.1
+# npm install --save-dev @types/vscode@1.93.0
 
-# Final security fixes
-npm audit fix --force
+# # Final security fixes
+# npm audit fix --force
 
 # Build and test phase
 npm run test

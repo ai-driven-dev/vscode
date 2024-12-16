@@ -178,7 +178,7 @@
     }
   },
   "license": "GPL-3.0-or-later",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "node setup.js",
     "prepare": "husky install",
