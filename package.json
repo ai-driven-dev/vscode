@@ -8,20 +8,6 @@
     "type": "git",
     "url": "https://github.com/ai-driven-dev/vscode.git"
   },
-  "icon": "icon.png",
-  "engines": {
-    "vscode": "^1.93.1"
-  },
-  "main": "./out/extension.js",
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "categories": [
-    "Formatters",
-    "Keymaps",
-    "Snippets",
-    "Other"
-  ],
   "keywords": [
     "ai",
     "productivity",
@@ -29,182 +15,17 @@
     "settings",
     "keybindings"
   ],
-  "galleryBanner": {
-    "color": "#1e1e1e",
-    "theme": "dark"
-  },
-  "contributes": {
-    "snippets": [
-      {
-        "language": "typescript",
-        "path": "./config/snippets/typescript.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./config/snippets/typescriptreact.json"
-      }
-    ],
-    "recommendations": [
-      "ms-azuretools.vscode-docker",
-      "streetsidesoftware.code-spell-checker",
-      "streetsidesoftware.code-spell-checker-french",
-      "yzhang.markdown-all-in-one",
-      "DavidAnson.vscode-markdownlint",
-      "esbenp.prettier-vscode"
-    ],
-    "keybindings": [
-      {
-        "key": "ctrl+shift+k",
-        "command": "editor.action.deleteLines",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "ctrl+shift+v",
-        "command": "editor.action.pasteAs",
-        "args": {
-          "preferences": [
-            "text.updateImports"
-          ]
-        }
-      },
-      {
-        "key": "ctrl+shift+l",
-        "command": "editor.action.selectHighlights",
-        "when": "editorTextFocus"
-      },
-      {
-        "key": "cmd+n",
-        "command": "explorer.newFile"
-      },
-      {
-        "key": "ctrl+s",
-        "command": "typescript.removeUnusedImports"
-      },
-      {
-        "key": "ctrl+s",
-        "command": "-markdown.extension.toc.update",
-        "when": "resourceExtname == .md"
-      },
-      {
-        "key": "shift+cmd+l",
-        "command": "-addCursorsAtSearchResults"
-      }
-    ],
-    "unwantedRecommendations": [],
-    "configuration": {
-      "type": "object",
-      "properties": {
-        "ai-driven-dev.disableConflictingCommand": {
-          "type": "boolean",
-          "default": true,
-          "description": "Disable the conflicting addCursorsAtSearchResults command."
-        },
-        "ai-driven-dev.disableCursorOpenEdit": {
-          "type": "boolean",
-          "default": true,
-          "description": "Disable the conflicting cursor.openEdit command."
-        }
-      }
-    },
-    "configurationDefaults": {
-      "explorer.compactFolders": false,
-      "files.autoSave": "afterDelay",
-      "files.autoSaveDelay": 500,
-      "files.eol": "\n",
-      "editor.formatOnSave": true,
-      "editor.formatOnPaste": true,
-      "editor.formatOnSaveMode": "modificationsIfAvailable",
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-      },
-      "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-      },
-      "json.format.enable": true,
-      "[markdown]": {
-        "editor.codeActionsOnSave": {
-          "source.fixAll.markdownlint": "explicit"
-        }
-      },
-      "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit",
-        "source.organizeImports": "explicit",
-        "source.addMissingImports": "explicit"
-      },
-      "editor.wordWrap": "on",
-      "editor.wordWrapColumn": 80,
-      "editor.wrappingIndent": "same",
-      "editor.minimap.enabled": false,
-      "git.enabled": true,
-      "git.autofetch": true,
-      "git.confirmSync": false,
-      "scm.diffDecorations": "all",
-      "workbench.editor.decorations.badges": true,
-      "workbench.editor.showTabs": "multiple",
-      "workbench.editor.wrapTabs": true,
-      "workbench.editor.tabSizing": "fit",
-      "workbench.editor.maxEditorGroupRows": 2,
-      "workbench.editor.enablePreview": false,
-      "workbench.editor.enablePreviewFromQuickOpen": false,
-      "css.hover.documentation": false,
-      "markdown.extension.toc.updateOnSave": true,
-      "github.copilot.enable": {
-        "*": true,
-        "markdown": true
-      },
-      "cSpell.userWords": [
-        "ai-driven-dev",
-        "autofetch"
-      ],
-      "windsurf.autocompleteSpeed": "fast",
-      "windsurf.enableModelBasedAutoExecution": true,
-      "prettier.tabWidth": 2,
-      "prettier.useTabs": false,
-      "prettier.singleQuote": false,
-      "prettier.trailingComma": "none",
-      "prettier.bracketSpacing": true,
-      "prettier": {
-        "overrides": [
-          {
-            "files": "*.jsonc",
-            "options": {
-              "parser": "json"
-            }
-          }
-        ]
-      },
-      "typescript.updateImportsOnFileMove.enabled": "always"
-    }
-  },
   "license": "GPL-3.0-or-later",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "build": "node setup.js",
     "prepare": "husky install",
-    "compile": "tsc -p ./",
     "local-install": "bash ./scripts/local-install.sh",
     "publish": "bash ./scripts/publish.sh",
     "test": "vitest --watch=false"
   },
   "devDependencies": {
-    "@types/vscode": "^1.93.0",
-    "@vscode/vsce": "^3.2.1",
     "husky": "^8.0.3",
-    "lint-staged": "^15.2.11",
-    "ovsx": "^0.10.1",
-    "typescript": "^5.7.2",
     "vitest": "^2.1.8"
-  },
-  "lint-staged": {
-    "README.md": [
-      "npm run build"
-    ],
-    "config/*.json": [
-      "npm run build"
-    ],
-    "config/**/*.json": [
-      "npm run build"
-    ]
   }
 }

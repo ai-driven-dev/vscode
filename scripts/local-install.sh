@@ -26,10 +26,11 @@ set -e
 
 # Build and test phase
 npm run test
-npm run compile
 
-# Setup and packaging
+# VSCode extension build
 node setup.js
+cd extension
+npm run compile
 npx @vscode/vsce package
 
 # Extension installation

@@ -1,13 +1,9 @@
-# Example and environment files
-.env*
-.gitignore
-
 # Development files
 tsconfig.json
 package-lock.json
 
 # Development tools
-.husky/
 scripts/
 setup.js
 setup.test.js
+config/

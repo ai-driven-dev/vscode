@@ -1,0 +1,201 @@
+{
+  "name": "ai-driven-dev",
+  "displayName": "AI-Driven Dev Config",
+  "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
+  "version": "0.1.7",
+  "publisher": "ai-driven-dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ai-driven-dev/vscode.git"
+  },
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.93.1"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "categories": [
+    "Formatters",
+    "Keymaps",
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "ai",
+    "productivity",
+    "configuration",
+    "settings",
+    "keybindings"
+  ],
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@types/vscode": "^1.93.0",
+    "@vscode/vsce": "^3.2.1",
+    "ovsx": "^0.10.1"
+  },
+  "lint-staged": {
+    "README.md": [
+      "npm run build"
+    ],
+    "config/*.json": [
+      "npm run build"
+    ],
+    "config/**/*.json": [
+      "npm run build"
+    ]
+  },
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": ".//snippets/typescriptreact.json"
+      }
+    ],
+    "recommendations": [
+      "ms-azuretools.vscode-docker",
+      "streetsidesoftware.code-spell-checker",
+      "streetsidesoftware.code-spell-checker-french",
+      "yzhang.markdown-all-in-one",
+      "DavidAnson.vscode-markdownlint",
+      "esbenp.prettier-vscode"
+    ],
+    "keybindings": [
+      {
+        "key": "ctrl+shift+v",
+        "command": "editor.action.pasteAs",
+        "args": {
+          "preferences": [
+            "text.updateImports"
+          ]
+        }
+      },
+      {
+        "key": "cmd+n",
+        "command": "explorer.newFile"
+      },
+      {
+        "key": "ctrl+s",
+        "command": "typescript.removeUnusedImports"
+      },
+      {
+        "key": "ctrl+s",
+        "command": "-markdown.extension.toc.update",
+        "when": "resourceExtname == .md"
+      },
+      {
+        "key": "shift+cmd+l",
+        "command": "-addCursorsAtSearchResults"
+      },
+      {
+        "key": "shift+cmd+k",
+        "command": "-aipopup.action.modal.generate"
+      },
+      {
+        "key": "shift+cmd+k",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus"
+      }
+    ],
+    "unwantedRecommendations": [],
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "ai-driven-dev.disableConflictingCommand": {
+          "type": "boolean",
+          "default": true,
+          "description": "Disable the conflicting addCursorsAtSearchResults command."
+        },
+        "ai-driven-dev.disableCursorOpenEdit": {
+          "type": "boolean",
+          "default": true,
+          "description": "Disable the conflicting aipopup.action.modal.generate command."
+        }
+      }
+    },
+    "configurationDefaults": {
+      "explorer.compactFolders": false,
+      "files.autoSave": "afterDelay",
+      "files.autoSaveDelay": 500,
+      "files.eol": "\n",
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true,
+      "editor.formatOnSaveMode": "modificationsIfAvailable",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "json.format.enable": true,
+      "[markdown]": {
+        "editor.codeActionsOnSave": {
+          "source.fixAll.markdownlint": "explicit"
+        }
+      },
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "explicit",
+        "source.addMissingImports": "explicit"
+      },
+      "editor.wordWrap": "on",
+      "editor.wordWrapColumn": 80,
+      "editor.wrappingIndent": "same",
+      "editor.minimap.enabled": false,
+      "git.enabled": true,
+      "git.autofetch": true,
+      "git.confirmSync": false,
+      "scm.diffDecorations": "all",
+      "workbench.editor.decorations.badges": true,
+      "workbench.editor.showTabs": "multiple",
+      "workbench.editor.wrapTabs": true,
+      "workbench.editor.tabSizing": "fit",
+      "workbench.editor.limit.enabled": true,
+      "workbench.editor.limit.value": 8,
+      "workbench.editor.enablePreview": false,
+      "workbench.editor.enablePreviewFromQuickOpen": false,
+      "css.hover.documentation": false,
+      "markdown.extension.toc.updateOnSave": true,
+      "github.copilot.enable": {
+        "*": true,
+        "markdown": true
+      },
+      "cSpell.userWords": [
+        "ai-driven-dev",
+        "autofetch"
+      ],
+      "windsurf.autocompleteSpeed": "fast",
+      "windsurf.enableModelBasedAutoExecution": true,
+      "prettier.tabWidth": 2,
+      "prettier.useTabs": false,
+      "prettier.singleQuote": false,
+      "prettier.trailingComma": "none",
+      "prettier.bracketSpacing": true,
+      "prettier": {
+        "overrides": [
+          {
+            "files": "*.jsonc",
+            "options": {
+              "parser": "json"
+            }
+          }
+        ]
+      },
+      "typescript.updateImportsOnFileMove.enabled": "always"
+    }
+  }
+}
