@@ -1,7 +1,7 @@
 {
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev Config",
-  "description": "Better VSCode code configuration to improve AI developer experience",
+  "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
   "version": "0.1.7",
   "publisher": "ai-driven-dev",
   "repository": {
@@ -18,9 +18,22 @@
     "onCommand:addCursorsAtSearchResults"
   ],
   "categories": [
+    "Formatters",
+    "Keymaps",
     "Snippets",
     "Other"
   ],
+  "keywords": [
+    "ai",
+    "productivity",
+    "configuration",
+    "settings",
+    "keybindings"
+  ],
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
   "contributes": {
     "snippets": [
       {
@@ -79,6 +92,16 @@
       }
     ],
     "unwantedRecommendations": [],
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "ai-driven-dev.disableConflictingCommand": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable the conflicting addCursorsAtSearchResults command."
+        }
+      }
+    },
     "configurationDefaults": {
       "explorer.compactFolders": false,
       "files.autoSave": "afterDelay",
@@ -160,13 +183,13 @@
     "test": "vitest --watch=false"
   },
   "devDependencies": {
-    "@types/vscode": "^1.93.1",
-    "husky": "^8.0.0",
-    "lint-staged": "^15.0.0",
+    "@types/vscode": "^1.93.0",
+    "@vscode/vsce": "^3.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.11",
     "ovsx": "^0.10.1",
     "typescript": "^5.7.2",
-    "vitest": "^2.1.8",
-    "vsce": "^2.15.0"
+    "vitest": "^2.1.8"
   },
   "lint-staged": {
     "README.md": [
