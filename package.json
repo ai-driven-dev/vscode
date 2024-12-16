@@ -14,8 +14,7 @@
   },
   "main": "./out/extension.js",
   "activationEvents": [
-    "onStartupFinished",
-    "onCommand:addCursorsAtSearchResults"
+    "onStartupFinished"
   ],
   "categories": [
     "Formatters",
@@ -97,8 +96,13 @@
       "properties": {
         "ai-driven-dev.disableConflictingCommand": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "description": "Disable the conflicting addCursorsAtSearchResults command."
+        },
+        "ai-driven-dev.disableCursorOpenEdit": {
+          "type": "boolean",
+          "default": true,
+          "description": "Disable the conflicting cursor.openEdit command."
         }
       }
     },
@@ -140,6 +144,7 @@
       "workbench.editor.showTabs": "multiple",
       "workbench.editor.wrapTabs": true,
       "workbench.editor.tabSizing": "fit",
+      "workbench.editor.maxEditorGroupRows": 2,
       "workbench.editor.enablePreview": false,
       "workbench.editor.enablePreviewFromQuickOpen": false,
       "css.hover.documentation": false,

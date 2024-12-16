@@ -79,6 +79,7 @@
   "workbench.editor.showTabs": "multiple",
   "workbench.editor.wrapTabs": true,
   "workbench.editor.tabSizing": "fit",
+  "workbench.editor.maxEditorGroupRows": 2,
 
   // Disable preview mode for tabs
   "workbench.editor.enablePreview": false,
