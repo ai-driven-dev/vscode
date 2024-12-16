@@ -39,5 +39,11 @@
     "key": "ctrl+s",
     "command": "-markdown.extension.toc.update",
     "when": "resourceExtname == .md"
+  },
+
+  // Disable cursor shortcut and remap to vs code select highlights default shortcut
+  {
+    "key": "shift+cmd+l",
+    "command": "-addCursorsAtSearchResults"
   }
 ]

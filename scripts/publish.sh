@@ -32,7 +32,8 @@ fi
 npm run test --  --reporter=basic
 
 # Build the extension
-node setup.js
+npm run compile # compile the extension
+node setup.js # generate package.json
 
 # Package the extension
 echo "Packaging extension..."

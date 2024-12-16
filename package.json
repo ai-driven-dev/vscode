@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev Config",
   "description": "Better VSCode code configuration to improve AI developer experience",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "publisher": "ai-driven-dev",
   "repository": {
     "type": "git",
@@ -10,8 +10,13 @@
   },
   "icon": "icon.png",
   "engines": {
-    "vscode": "^1.75.0"
+    "vscode": "^1.93.1"
   },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:addCursorsAtSearchResults"
+  ],
   "categories": [
     "Snippets",
     "Other"
@@ -67,6 +72,10 @@
         "key": "ctrl+s",
         "command": "-markdown.extension.toc.update",
         "when": "resourceExtname == .md"
+      },
+      {
+        "key": "shift+cmd+l",
+        "command": "-addCursorsAtSearchResults"
       }
     ],
     "unwantedRecommendations": [],
@@ -122,12 +131,21 @@
       ],
       "windsurf.autocompleteSpeed": "fast",
       "windsurf.enableModelBasedAutoExecution": true,
-      "prettier.requireConfig": true,
       "prettier.tabWidth": 2,
       "prettier.useTabs": false,
       "prettier.singleQuote": false,
       "prettier.trailingComma": "none",
       "prettier.bracketSpacing": true,
+      "prettier": {
+        "overrides": [
+          {
+            "files": "*.jsonc",
+            "options": {
+              "parser": "json"
+            }
+          }
+        ]
+      },
       "typescript.updateImportsOnFileMove.enabled": "always"
     }
   },
@@ -136,14 +154,17 @@
   "scripts": {
     "build": "node setup.js",
     "prepare": "husky install",
-    "local-install": "npm run test && node setup.js && npx vsce package && code --install-extension *.vsix && cursor --install-extension *.vsix && rm -rf *.vsix",
+    "compile": "tsc -p ./",
+    "local-install": "bash ./scripts/local-install.sh",
     "publish": "bash ./scripts/publish.sh",
     "test": "vitest --watch=false"
   },
   "devDependencies": {
+    "@types/vscode": "^1.93.1",
     "husky": "^8.0.0",
     "lint-staged": "^15.0.0",
     "ovsx": "^0.10.1",
+    "typescript": "^5.7.2",
     "vitest": "^2.1.8",
     "vsce": "^2.15.0"
   },
