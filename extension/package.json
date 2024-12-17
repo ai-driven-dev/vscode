@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev Config",
   "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "publisher": "ai-driven-dev",
   "repository": {
     "type": "git",
@@ -39,22 +39,6 @@
     "@vscode/vsce": "^3.2.1",
     "ovsx": "^0.10.1"
   },
-  "lint-staged": {
-    "README.md": [
-      "npm run build"
-    ],
-    "config/*.json": [
-      "npm run build"
-    ],
-    "config/**/*.json": [
-      "npm run build"
-    ]
-  },
-  "galleryBanner": {
-    "color": "#1e1e1e",
-    "theme": "dark"
-  },
-  "unwantedRecommendations": [],
   "configuration": {
     "type": "object",
     "title": "AI-Driven Dev - Settings",
@@ -142,6 +126,7 @@
     ],
     "configurationDefaults": {
       "explorer.compactFolders": false,
+      "explorer.confirmDelete": false,
       "files.autoSave": "afterDelay",
       "files.autoSaveDelay": 500,
       "files.eol": "\n",
@@ -180,7 +165,6 @@
       "workbench.editor.tabSizing": "fit",
       "workbench.editor.limit.enabled": true,
       "workbench.editor.limit.value": 8,
-      "workbench.activityBar.orientation": "vertical",
       "workbench.editor.enablePreview": false,
       "workbench.editor.enablePreviewFromQuickOpen": false,
       "css.hover.documentation": false,
@@ -214,5 +198,5 @@
     },
     "unwantedRecommendations": []
   },
-  "built": "2024-12-17, 07:39:20"
+  "built": "2024-12-17T07:05:07.032Z"
 }

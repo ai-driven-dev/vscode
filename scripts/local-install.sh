@@ -34,8 +34,13 @@ npm run compile
 npx @vscode/vsce package
 
 # Extension installation
-code --install-extension *.vsix
-cursor --install-extension *.vsix
+declare -a installers=("code" "cursor" "windsurf")
+
+for installer in "${installers[@]}"; do
+  if [ -x "$(command -v "$installer")" ]; then
+    "$installer" --install-extension *.vsix
+  fi
+done
 
 # Cleanup
 rm -rf *.vsix 

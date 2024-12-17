@@ -3,7 +3,10 @@ import * as vscode from "vscode";
 export function activate(context: vscode.ExtensionContext) {
   // Vertical Sidebar
   const config = vscode.workspace.getConfiguration();
-  if (config.get("workbench.activityBar.orientation") !== "vertical") {
+
+  const orientationConfig = config.get("workbench.activityBar.orientation");
+
+  if (orientationConfig && orientationConfig !== "vertical") {
     config.update(
       "workbench.activityBar.orientation",
       "vertical",

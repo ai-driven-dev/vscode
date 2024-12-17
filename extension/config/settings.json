@@ -6,6 +6,9 @@
   // Disable compact folder display
   "explorer.compactFolders": false,
 
+  // Remove warning when moving to trash
+  "explorer.confirmDelete": false,
+
   /**
    ** FILES
    **/
@@ -81,9 +84,6 @@
   "workbench.editor.tabSizing": "fit",
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 8,
-
-  // Sidebar vertical
-  "workbench.activityBar.orientation": "vertical",
 
   // Disable preview mode for tabs
   "workbench.editor.enablePreview": false,
