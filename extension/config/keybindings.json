@@ -41,5 +41,23 @@
     "key": "shift+cmd+k",
     "command": "editor.action.deleteLines",
     "when": "editorTextFocus"
+  },
+
+  // When opening a chat, close the sidebar
+  {
+    "key": "cmd+l",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.closeSidebar",
+        "aichat.focuschatpaneaction"
+      ]
+    }
+  },
+
+  // Toggle secondary sidebar
+  {
+    "key": "cmd+shift+b",
+    "command": "workbench.action.toggleAuxiliaryBar"
   }
 ]

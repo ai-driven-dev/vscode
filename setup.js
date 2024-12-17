@@ -1,57 +1,79 @@
-// setup.js
-import { readFile, writeFile } from 'fs/promises';
-import { dirname, join } from 'path';
-import { fileURLToPath } from 'url';
+import { readFile, writeFile } from "fs/promises";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename) + "/extension";
+const __dirname = dirname(__filename);
+const extensionDir = join(__dirname, "extension");
 
-// Chemins des fichiers
-const settingsPath = join(__dirname, 'config', 'settings.json');
-const packagePath = join(__dirname, 'package.json');
-const keybindingsPath = join(__dirname, 'config', 'keybindings.json');
-const extensionsPath = join(__dirname, 'config', 'extensions.json');
+const settingsPath = join(extensionDir, "config", "settings.json");
+const packagePath = join(extensionDir, "package.json");
+const keybindingsPath = join(extensionDir, "config", "keybindings.json");
+const extensionsPath = join(extensionDir, "config", "extensions.json");
 
-// Fonction pour nettoyer les commentaires JSON
 export function stripJSONComments(jsonString) {
-    return jsonString.replace(/\\"|"(?:\\"|[^"])*"|(\/\/.*|\/\*[\s\S]*?\*\/)/g, (m, g) => g ? '' : m);
+  return jsonString.replace(
+    /\\"|"(?:\\"|[^"])*"|(\/\/.*|\/\*[\s\S]*?\*\/)/g,
+    (m, g) => (g ? "" : m)
+  );
 }
 
-// Fonction pour lire le fichier JSON
 export async function readJsonFile(filePath) {
-    try {
-        const data = await readFile(filePath, 'utf8');
-        const cleanContent = stripJSONComments(data);
-        return JSON.parse(cleanContent);
-    } catch (error) {
-        throw new Error(`Failed to read or parse ${filePath}: ${error.message}`);
-    }
+  try {
+    const data = await readFile(filePath, "utf8");
+    const cleanContent = stripJSONComments(data);
+    return JSON.parse(cleanContent);
+  } catch (error) {
+    throw new Error(`Failed to read or parse ${filePath}: ${error.message}`);
+  }
 }
 
-// Fonction pour écrire dans le fichier JSON
 export async function writeJsonFile(filePath, data) {
-    await writeFile(filePath, JSON.stringify(data, null, 2));
+  await writeFile(filePath, JSON.stringify(data, null, 2));
 }
 
-// Fonction principale
 async function updatePackageJson() {
-    const configurationDefaults = await readJsonFile(settingsPath);
-    const packageJson = await readJsonFile(packagePath);
-    const keybindings = await readJsonFile(keybindingsPath);
-    const extensions = await readJsonFile(extensionsPath);
+  const packageJson = await readJsonFile(packagePath);
+  if (!packageJson) {
+    throw new Error("Failed to read package.json");
+  }
 
+  const configurationDefaults = await readJsonFile(settingsPath);
+  const keybindings = await readJsonFile(keybindingsPath);
+  const extensions = await readJsonFile(extensionsPath);
+
+  if (!packageJson.contributes) {
+    packageJson.contributes = {};
+  }
+
+  if (configurationDefaults) {
     packageJson.contributes.configurationDefaults = configurationDefaults;
-
+  }
+  if (keybindings) {
     packageJson.contributes.keybindings = keybindings;
+  }
+  if (extensions) {
     packageJson.contributes.recommendations = extensions.recommendations;
-    packageJson.contributes.unwantedRecommendations = extensions.unwantedRecommendations;
+    packageJson.contributes.unwantedRecommendations =
+      extensions.unwantedRecommendations;
+  }
 
-    await writeJsonFile(packagePath, packageJson);
-    console.log('Package.json updated successfully');
+  packageJson.built = new Date()
+    .toLocaleString("en-CA", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false
+    })
+    .replace(/(\d+)\/(\d+)\/(\d+)/, "$3-$1-$2");
+
+  await writeJsonFile(packagePath, packageJson);
 }
 
-// Exécuter la fonction
-updatePackageJson().catch(error => {
-    console.error('Error during setup:', error);
-    process.exit(1);
+updatePackageJson().catch((error) => {
+  console.error("Error during setup:", error);
+  process.exit(1);
 });

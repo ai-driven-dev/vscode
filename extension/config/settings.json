@@ -82,6 +82,9 @@
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 8,
 
+  // Sidebar vertical
+  "workbench.activityBar.orientation": "vertical",
+
   // Disable preview mode for tabs
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,

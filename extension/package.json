@@ -54,6 +54,22 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
+  "unwantedRecommendations": [],
+  "configuration": {
+    "type": "object",
+    "title": "AI-Driven Dev - Settings",
+    "properties": {
+      "workbench.activityBar.orientation": {
+        "type": "string",
+        "default": "vertical",
+        "enum": [
+          "horizontal",
+          "vertical"
+        ],
+        "description": "Set the orientation of the activity bar."
+      }
+    }
+  },
   "contributes": {
     "snippets": [
       {
@@ -108,24 +124,22 @@
         "key": "shift+cmd+k",
         "command": "editor.action.deleteLines",
         "when": "editorTextFocus"
+      },
+      {
+        "key": "cmd+l",
+        "command": "runCommands",
+        "args": {
+          "commands": [
+            "workbench.action.closeSidebar",
+            "aichat.focuschatpaneaction"
+          ]
+        }
+      },
+      {
+        "key": "cmd+shift+b",
+        "command": "workbench.action.toggleAuxiliaryBar"
       }
     ],
-    "unwantedRecommendations": [],
-    "configuration": {
-      "type": "object",
-      "properties": {
-        "ai-driven-dev.disableConflictingCommand": {
-          "type": "boolean",
-          "default": true,
-          "description": "Disable the conflicting addCursorsAtSearchResults command."
-        },
-        "ai-driven-dev.disableCursorOpenEdit": {
-          "type": "boolean",
-          "default": true,
-          "description": "Disable the conflicting aipopup.action.modal.generate command."
-        }
-      }
-    },
     "configurationDefaults": {
       "explorer.compactFolders": false,
       "files.autoSave": "afterDelay",
@@ -166,6 +180,7 @@
       "workbench.editor.tabSizing": "fit",
       "workbench.editor.limit.enabled": true,
       "workbench.editor.limit.value": 8,
+      "workbench.activityBar.orientation": "vertical",
       "workbench.editor.enablePreview": false,
       "workbench.editor.enablePreviewFromQuickOpen": false,
       "css.hover.documentation": false,
@@ -196,6 +211,8 @@
         ]
       },
       "typescript.updateImportsOnFileMove.enabled": "always"
-    }
-  }
+    },
+    "unwantedRecommendations": []
+  },
+  "built": "2024-12-17, 07:38:50"
 }
