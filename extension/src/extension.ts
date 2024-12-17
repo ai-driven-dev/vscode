@@ -25,6 +25,27 @@ async function setupAIConfiguration(type: "cursor" | "windsurf") {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+  // Watch for configuration changes
+  context.subscriptions.push(
+    vscode.workspace.onDidChangeConfiguration(async (e) => {
+      const aiConfig = vscode.workspace.getConfiguration("ai-driven-dev");
+      
+      if (e.affectsConfiguration("ai-driven-dev.createCursorFiles")) {
+        const createCursorFiles = aiConfig.get("createCursorFiles");
+        if (createCursorFiles) {
+          await setupAIConfiguration("cursor");
+        }
+      }
+      
+      if (e.affectsConfiguration("ai-driven-dev.createWindsurfFiles")) {
+        const createWindsurfFiles = aiConfig.get("createWindsurfFiles");
+        if (createWindsurfFiles) {
+          await setupAIConfiguration("windsurf");
+        }
+      }
+    })
+  );
+
   // Register Cursor configuration command
   let setupCursor = vscode.commands.registerCommand(
     "ai-driven-dev.createCursorFiles",

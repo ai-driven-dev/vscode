@@ -22,7 +22,7 @@ export const SOFTWARE_CONFIG: Record<
   }
 };
 
-export const EXTENSION_ID = "ai-driven-dev";
+export const EXTENSION_ID = "ai-driven-dev.ai-driven-dev";
 
 export const CONFIG_KEYS = {
   CREATE_CURSOR_FILES: "createCursorFiles",
