@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { writeGlobalRulesFile } from './fileManager';
 
 export function activate(context: vscode.ExtensionContext) {
   // Vertical Sidebar
@@ -18,6 +19,11 @@ export function activate(context: vscode.ExtensionContext) {
     );
   }
 
+  // Write global rules file
+  writeGlobalRulesFile().catch(error => {
+    console.error('Failed to write global rules file:', error);
+  });
+
   // Launch the extension
   const extension = vscode.extensions.getExtension(
     "ai-driven-dev.ai-driven-dev"
@@ -27,6 +33,13 @@ export function activate(context: vscode.ExtensionContext) {
   vscode.window.showInformationMessage(
     "AI-Driven Dev extension is activated 🤖 " + buildDate
   );
+
+  // Register command
+  let disposable = vscode.commands.registerCommand('my-extension.writeGlobalRules', () => {
+    writeGlobalRulesFile();
+  });
+
+  context.subscriptions.push(disposable);
 }
 
 export function deactivate() {}

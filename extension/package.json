@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev Config",
   "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "publisher": "ai-driven-dev",
   "repository": {
     "type": "git",
@@ -179,6 +179,12 @@
       ],
       "windsurf.autocompleteSpeed": "fast",
       "windsurf.enableModelBasedAutoExecution": true,
+      "windsurf.cascadeCommandsAllowList": [
+        "npm",
+        "cd",
+        "mkdir"
+      ],
+      "windsurf.openRecentConversation": false,
       "prettier.tabWidth": 2,
       "prettier.useTabs": false,
       "prettier.singleQuote": false,
@@ -198,5 +204,5 @@
     },
     "unwantedRecommendations": []
   },
-  "built": "2024-12-17T07:05:07.032Z"
+  "built": "2024-12-17T07:52:24.906Z"
 }

@@ -116,11 +116,21 @@
   // cSpell
   "cSpell.userWords": ["ai-driven-dev", "autofetch"],
 
-  // Windsurf : fast autocomplete
+  /** Windsurf **/
+
+  // Fast autocomplete
   "windsurf.autocompleteSpeed": "fast",
 
-  // Windsurf  : auto accept suggestions from chat
+  // Auto accept suggestions from chat
   "windsurf.enableModelBasedAutoExecution": true,
+
+  // Allowed commands to be executed without confirmation
+  "windsurf.cascadeCommandsAllowList": ["npm", "cd", "mkdir"],
+
+  // Do not reopen past conversations
+  "windsurf.openRecentConversation": false,
+
+  /** Prettier **/
 
   // Prettier
   "prettier.tabWidth": 2,
