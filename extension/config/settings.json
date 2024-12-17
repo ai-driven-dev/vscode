@@ -9,6 +9,23 @@
   // Remove warning when moving to trash
   "explorer.confirmDelete": false,
 
+  // No confirmation when moving files
+  "explorer.confirmDragAndDrop": false,
+
+  // Auto open file in explorer when opened in editor
+  "explorer.autoReveal": true,
+
+  /**
+   ** SIDEBAR
+   **/
+
+  // Beautiful outline view
+
+  "outline.showVariables": false,
+  "outline.showFields": false,
+  "outline.showFunctions": true,
+  "outline.collapseItems": "alwaysCollapse",
+
   /**
    ** FILES
    **/
@@ -23,6 +40,9 @@
   /**
    ** EDITOR
    **/
+
+  // Editing closing tag on type
+  "editor.linkedEditing": true,
 
   // Format on save
   "editor.formatOnSave": true,
@@ -114,6 +134,7 @@
   },
 
   // cSpell
+  "cSpell.language": "en,fr",
   "cSpell.userWords": ["ai-driven-dev", "autofetch"],
 
   /** Windsurf **/
@@ -163,5 +184,8 @@
   /** Typescript **/
 
   // Update imports on file move
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  /** Javascript **/
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }

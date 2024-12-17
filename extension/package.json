@@ -42,19 +42,35 @@
   "configuration": {
     "type": "object",
     "title": "AI-Driven Dev - Settings",
-    "properties": {
-      "workbench.activityBar.orientation": {
-        "type": "string",
-        "default": "vertical",
-        "enum": [
-          "horizontal",
-          "vertical"
-        ],
-        "description": "Set the orientation of the activity bar."
-      }
-    }
+    "properties": {}
   },
   "contributes": {
+    "commands": [
+      {
+        "command": "ai-driven-dev.createCursorFiles",
+        "title": "Create Cursor Configuration Files"
+      },
+      {
+        "command": "ai-driven-dev.createWindsurfFiles",
+        "title": "Create Windsurf Configuration Files"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "AI-Driven Dev Configuration",
+      "properties": {
+        "ai-driven-dev.createCursorFiles": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable the creation of Cursor configuration files"
+        },
+        "ai-driven-dev.createWindsurfFiles": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable the creation of Windsurf configuration files"
+        }
+      }
+    },
     "snippets": [
       {
         "language": "typescript",
@@ -62,7 +78,7 @@
       },
       {
         "language": "typescriptreact",
-        "path": ".//snippets/typescriptreact.json"
+        "path": "./snippets/typescriptreact.json"
       }
     ],
     "recommendations": [
@@ -127,9 +143,16 @@
     "configurationDefaults": {
       "explorer.compactFolders": false,
       "explorer.confirmDelete": false,
+      "explorer.confirmDragAndDrop": false,
+      "explorer.autoReveal": true,
+      "outline.showVariables": false,
+      "outline.showFields": false,
+      "outline.showFunctions": true,
+      "outline.collapseItems": "alwaysCollapse",
       "files.autoSave": "afterDelay",
       "files.autoSaveDelay": 500,
       "files.eol": "\n",
+      "editor.linkedEditing": true,
       "editor.formatOnSave": true,
       "editor.formatOnPaste": true,
       "editor.formatOnSaveMode": "modificationsIfAvailable",
@@ -173,6 +196,7 @@
         "*": true,
         "markdown": true
       },
+      "cSpell.language": "en,fr",
       "cSpell.userWords": [
         "ai-driven-dev",
         "autofetch"
@@ -182,7 +206,10 @@
       "windsurf.cascadeCommandsAllowList": [
         "npm",
         "cd",
-        "mkdir"
+        "mkdir",
+        "ls",
+        "touch",
+        "git"
       ],
       "windsurf.openRecentConversation": false,
       "prettier.tabWidth": 2,
@@ -200,9 +227,10 @@
           }
         ]
       },
-      "typescript.updateImportsOnFileMove.enabled": "always"
+      "typescript.updateImportsOnFileMove.enabled": "always",
+      "javascript.updateImportsOnFileMove.enabled": "always"
     },
     "unwantedRecommendations": []
   },
-  "built": "2024-12-17T07:59:29.822Z"
+  "built": "2024-12-17T16:49:52.618Z"
 }
