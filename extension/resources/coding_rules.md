@@ -7,7 +7,7 @@ Use these “When?” sections as micro-rules for specific tasks or outputs.
 - Document only complex or domain-specific flows, no inline comments if possible
 
 ## When creating a function
-- Write a function that does exactly one thing
+- Follow the Single Responsibility Principle, one function = one task
 - Use clear, descriptive variable names
 - Limit parameters and prefer immutability
 - Update any reference docs if behavior changes

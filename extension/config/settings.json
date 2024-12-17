@@ -125,7 +125,14 @@
   "windsurf.enableModelBasedAutoExecution": true,
 
   // Allowed commands to be executed without confirmation
-  "windsurf.cascadeCommandsAllowList": ["npm", "cd", "mkdir"],
+  "windsurf.cascadeCommandsAllowList": [
+    "npm",
+    "cd",
+    "mkdir",
+    "ls",
+    "touch",
+    "git"
+  ],
 
   // Do not reopen past conversations
   "windsurf.openRecentConversation": false,
