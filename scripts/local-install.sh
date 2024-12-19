@@ -29,7 +29,7 @@ npm run test
 
 # VSCode extension build
 node setup.js
-cd extension
+cd ./extension_aidd/
 npm run compile
 npx @vscode/vsce package
 

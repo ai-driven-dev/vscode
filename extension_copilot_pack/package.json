@@ -1,0 +1,32 @@
+{
+  "name": "github-copilot-pack",
+  "displayName": "GitHub Copilot Extension Pack",
+  "description": "A curated collection of extensions for working with GitHub Copilot.",
+  "version": "1.0.1",
+  "publisher": "ai-driven-dev",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ai-driven-dev/vscode.git"
+  },
+  "categories": [
+    "Extension Packs"
+  ],
+  "extensionPack": [
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "GitHub.copilot-labs",
+    "GitHub.vscode-codeql",
+    "GitHub.copilot-workspace",
+    "ms-vscode.vscode-commander",
+    "ms-vscode.vscode-speech",
+    "ms-vscode.copilot-mermaid-diagram",
+    "ms-vscode.vscode-websearchforcopilot",
+    "ms-vscode.vscode-speech-language-pack-fr-fr",
+    "ms-vscode.vscode-copilot-vision",
+    "ms-azuretools.vscode-azure-github-copilot"
+  ]
+}

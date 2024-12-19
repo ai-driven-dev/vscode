@@ -1,6 +1,6 @@
 node_modules
 .env
-extension/out/
+extension_aidd/out/
 
 .windsurfrules
 .cursorrules

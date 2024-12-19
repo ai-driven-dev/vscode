@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const extensionDir = join(__dirname, "extension");
+const extensionDir = join(__dirname, "extension_aidd");
 
 const settingsPath = join(extensionDir, "config", "settings.json");
 const packagePath = join(extensionDir, "package.json");

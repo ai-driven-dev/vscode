@@ -36,7 +36,7 @@ node setup.js # generate package.json
 
 # Package the extension
 echo "Packaging extension..."
-cd extension
+cd ./extension_aidd/
 npm run compile # compile the extension
 npx vsce package
 
