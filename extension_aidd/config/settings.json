@@ -152,7 +152,9 @@
     "mkdir",
     "ls",
     "touch",
-    "git"
+    "git",
+    "mv",
+    "cp"
   ],
 
   // Do not reopen past conversations

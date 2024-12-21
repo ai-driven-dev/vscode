@@ -26,13 +26,35 @@
     "when": "resourceExtname == .md"
   },
 
-  // Disable cursor shortcut and remap to vs code select highlights default shortcut
+  // Open file on
   {
-    "key": "shift+cmd+l",
-    "command": "-addCursorsAtSearchResults"
+    "key": "f12",
+    "command": "editor.action.revealDefinition",
+    "when": "editorTextFocus"
   },
 
-  // Disable cursor shortcut and remap to vs code delete lines default shortcut
+  // Disable cursor shortcut and remap to VS Code select highlights default shortcut
+  {
+    "key": "shift+cmd+l",
+    "command": "-addCursorsAtSearchResults" // Désactive Cursor
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "editor.action.selectHighlights", // Associe VS Code par défaut
+    "when": "editorFocus"
+  },
+
+  // Remove Windsurf commands from cmd+shift+l
+  {
+    "key": "shift+cmd+l",
+    "command": "-windsurf.prioritized.chat.openNewConversationFromTerminal"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-windsurf.prioritized.chat.openNewConversation"
+  },
+
+  // Disable cursor shortcut and remap to VS Code delete lines default shortcut
   {
     "key": "shift+cmd+k",
     "command": "-aipopup.action.modal.generate"

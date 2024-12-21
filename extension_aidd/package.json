@@ -113,8 +113,26 @@
         "when": "resourceExtname == .md"
       },
       {
+        "key": "f12",
+        "command": "editor.action.revealDefinition",
+        "when": "editorTextFocus"
+      },
+      {
         "key": "shift+cmd+l",
         "command": "-addCursorsAtSearchResults"
+      },
+      {
+        "key": "shift+cmd+l",
+        "command": "editor.action.selectHighlights",
+        "when": "editorFocus"
+      },
+      {
+        "key": "shift+cmd+l",
+        "command": "-windsurf.prioritized.chat.openNewConversationFromTerminal"
+      },
+      {
+        "key": "shift+cmd+l",
+        "command": "-windsurf.prioritized.chat.openNewConversation"
       },
       {
         "key": "shift+cmd+k",
@@ -209,7 +227,9 @@
         "mkdir",
         "ls",
         "touch",
-        "git"
+        "git",
+        "mv",
+        "cp"
       ],
       "windsurf.openRecentConversation": false,
       "prettier.tabWidth": 2,
@@ -232,5 +252,5 @@
     },
     "unwantedRecommendations": []
   },
-  "built": "2024-12-19T18:53:56.187Z"
+  "built": "2024-12-21T22:02:08.284Z"
 }

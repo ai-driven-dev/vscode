@@ -1,6 +1,8 @@
 # Contextual Coding Guidelines
 
-Use these “When?” sections as micro-rules for specific tasks or outputs.
+- Use these “When?” sections as micro-rules for specific tasks or outputs.
+- Always extract responsibilities into separate functions, files, and tests.
+- Always ask before installing a new package.
 
 ## When writing code
 
