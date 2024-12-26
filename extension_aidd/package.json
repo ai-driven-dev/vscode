@@ -14,7 +14,8 @@
   },
   "main": "./out/extension.js",
   "activationEvents": [
-    "onStartupFinished"
+    "onStartupFinished",
+    "workspaceContains:**/.vscode/settings.json"
   ],
   "categories": [
     "Formatters",
@@ -34,10 +35,11 @@
     "compile": "tsc -p ./"
   },
   "devDependencies": {
-    "typescript": "^5.7.2",
+    "@types/node": "^22.10.2",
     "@types/vscode": "^1.93.0",
     "@vscode/vsce": "^3.2.1",
-    "ovsx": "^0.10.1"
+    "ovsx": "^0.10.1",
+    "typescript": "^5.7.2"
   },
   "configuration": {
     "type": "object",
@@ -201,6 +203,8 @@
       "git.confirmSync": false,
       "scm.diffDecorations": "all",
       "workbench.editor.decorations.badges": true,
+      "workbench.startupEditor": "welcomePage",
+      "window.restoreWindows": "none",
       "workbench.editor.showTabs": "multiple",
       "workbench.editor.wrapTabs": true,
       "workbench.editor.tabSizing": "fit",
@@ -252,5 +256,5 @@
     },
     "unwantedRecommendations": []
   },
-  "built": "2024-12-21T22:02:08.284Z"
+  "built": "2024-12-26T17:32:12.303Z"
 }

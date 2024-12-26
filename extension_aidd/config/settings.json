@@ -95,8 +95,12 @@
   "workbench.editor.decorations.badges": true,
 
   /**
-   ** WORKBENCH (TABS)
+   ** WORKBENCH
    **/
+
+  // Opened page on startup
+  "workbench.startupEditor": "welcomePage",
+  "window.restoreWindows": "none", // not allowed in extension
 
   // Wrap tabs for better visibility
   "workbench.editor.showTabs": "multiple",
@@ -162,7 +166,7 @@
 
   /** Prettier **/
 
-  // Prettier
+  // Simple configuration
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
   "prettier.singleQuote": false,

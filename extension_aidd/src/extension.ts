@@ -1,92 +1,98 @@
 import * as vscode from "vscode";
+import { configManager } from "./utils/configManager";
 import { CONFIG_KEYS } from "./utils/constants";
 import { createIgnoreFile, createRulesFile } from "./utils/fileUtils";
-import {
-  showErrorMessage,
-  showSuccessMessage
-} from "./utils/ui";
+import { showErrorMessage, showSuccessMessage } from "./utils/ui";
 
 async function setupAIConfiguration(type: "cursor" | "windsurf") {
-  const aiConfig = vscode.workspace.getConfiguration("ai-driven-dev");
   const configKey =
     type === "cursor"
       ? CONFIG_KEYS.CREATE_CURSOR_FILES
       : CONFIG_KEYS.CREATE_WINDSURF_FILES;
 
-  aiConfig.update(configKey, true, vscode.ConfigurationTarget.Global);
-
   try {
-    await createRulesFile(type);
-    await createIgnoreFile(type);
-    await showSuccessMessage(`${type} configuration completed`);
+    // Exécuter les opérations en parallèle et attendre leur complétion
+    const [ruleResult, ignoreResult] = await Promise.all([
+      createRulesFile(type).catch(error => {
+        console.error(`Error creating rules file for ${type}:`, error);
+        return false;
+      }),
+      createIgnoreFile(type).catch(error => {
+        console.error(`Error creating ignore file for ${type}:`, error);
+        return false;
+      })
+    ]);
+
+    // Mettre à jour la configuration seulement si les fichiers ont été créés
+    if (ruleResult !== false && ignoreResult !== false) {
+      await configManager.updateConfiguration(configKey, true);
+      await showSuccessMessage(`${type} configuration completed`);
+    } else {
+      throw new Error(`Failed to create some ${type} configuration files`);
+    }
   } catch (error) {
     await showErrorMessage(error, `${type} configuration failed`);
+    throw error;
   }
 }
 
-export function activate(context: vscode.ExtensionContext) {
-  // Watch for configuration changes
-  context.subscriptions.push(
-    vscode.workspace.onDidChangeConfiguration(async (e) => {
-      const aiConfig = vscode.workspace.getConfiguration("ai-driven-dev");
-      
-      if (e.affectsConfiguration("ai-driven-dev.createCursorFiles")) {
-        const createCursorFiles = aiConfig.get("createCursorFiles");
-        if (createCursorFiles) {
-          await setupAIConfiguration("cursor");
-        }
-      }
-      
-      if (e.affectsConfiguration("ai-driven-dev.createWindsurfFiles")) {
-        const createWindsurfFiles = aiConfig.get("createWindsurfFiles");
-        if (createWindsurfFiles) {
-          await setupAIConfiguration("windsurf");
-        }
-      }
-    })
-  );
+async function applyInitialConfigurations() {
+  try {
+    const [cursorFiles, windsurfFiles] = await Promise.all([
+      configManager.getConfiguration("createCursorFiles", false),
+      configManager.getConfiguration("createWindsurfFiles", false)
+    ]);
 
-  // Register Cursor configuration command
-  let setupCursor = vscode.commands.registerCommand(
-    "ai-driven-dev.createCursorFiles",
-    () => setupAIConfiguration("cursor")
-  );
+    const setupPromises = [];
+    if (cursorFiles) setupPromises.push(setupAIConfiguration("cursor"));
+    if (windsurfFiles) setupPromises.push(setupAIConfiguration("windsurf"));
 
-  // Register Windsurf configuration command
-  let setupWindsurf = vscode.commands.registerCommand(
-    "ai-driven-dev.createWindsurfFiles",
-    () => setupAIConfiguration("windsurf")
-  );
-
-  // Register Cursor configuration command
-  let cursorCommand = vscode.commands.registerCommand(
-    "ai-driven-dev.configureCursor",
-    async () => {
-      try {
-        await setupAIConfiguration("cursor");
-      } catch (error) {
-        await showErrorMessage(error, "Cursor configuration failed");
-      }
+    if (setupPromises.length > 0) {
+      await Promise.all(setupPromises);
     }
-  );
-
-  // Register Windsurf configuration command
-  let windsurfCommand = vscode.commands.registerCommand(
-    "ai-driven-dev.configureWindsurf",
-    async () => {
-      try {
-        await setupAIConfiguration("windsurf");
-      } catch (error) {
-        await showErrorMessage(error, "Windsurf configuration failed");
-      }
-    }
-  );
-
-  // Notify extension activation
-  showSuccessMessage(`AI-Driven Dev activated 🔥`);
-
-  // Register commands
-  context.subscriptions.push(setupCursor, setupWindsurf, cursorCommand, windsurfCommand);
+  } catch (error) {
+    console.error("Error applying initial configurations:", error);
+    await showErrorMessage(error, "Failed to apply initial configurations");
+  }
 }
 
-export function deactivate() {}
+export async function activate(context: vscode.ExtensionContext) {
+  try {
+    await configManager.initialize();
+
+    // Enregistrer les commandes avec une meilleure gestion des erreurs
+    const commandHandlers = {
+      "ai-driven-dev.createCursorFiles": () => setupAIConfiguration("cursor"),
+      "ai-driven-dev.createWindsurfFiles": () => setupAIConfiguration("windsurf")
+    };
+
+    const disposables = Object.entries(commandHandlers).map(([command, handler]) =>
+      vscode.commands.registerCommand(command, async () => {
+        try {
+          await handler();
+        } catch (error) {
+          console.error(`Error executing ${command}:`, error);
+        }
+      })
+    );
+
+    context.subscriptions.push(...disposables);
+
+    // Nettoyer les ressources lors de la désactivation
+    context.subscriptions.push({
+      dispose: () => configManager.dispose()
+    });
+
+    // Appliquer les configurations initiales de manière asynchrone
+    queueMicrotask(applyInitialConfigurations);
+
+  } catch (error) {
+    console.error("Error activating extension:", error);
+    await showErrorMessage(error, "Failed to activate extension");
+    throw error;
+  }
+}
+
+export function deactivate() {
+  // La désactivation est gérée par le disposable ajouté dans activate()
+}
