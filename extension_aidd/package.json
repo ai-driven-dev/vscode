@@ -14,8 +14,8 @@
   },
   "main": "./out/extension.js",
   "activationEvents": [
-    "onStartupFinished",
-    "workspaceContains:**/.vscode/settings.json"
+    "onCommand:ai-driven-dev.createCursorFiles",
+    "onCommand:ai-driven-dev.createWindsurfFiles"
   ],
   "categories": [
     "Formatters",
@@ -261,6 +261,5 @@
       "javascript.updateImportsOnFileMove.enabled": "always"
     },
     "unwantedRecommendations": []
-  },
-  "built": "2024-12-27T13:49:54.027Z"
+  }
 }

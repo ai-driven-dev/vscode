@@ -58,8 +58,6 @@ async function updatePackageJson() {
       extensions.unwantedRecommendations;
   }
 
-  packageJson.built = new Date().toISOString();
-
   await writeJsonFile(packagePath, packageJson);
 }
 

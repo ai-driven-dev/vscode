@@ -31,10 +31,10 @@
     "when": "resourceExtname == .md"
   },
 
-  // Open file on
+  // Open file from git
   {
     "key": "f12",
-    "command": "editor.action.revealDefinition",
+    "command": "git.openFile",
     "when": "editorTextFocus"
   },
 

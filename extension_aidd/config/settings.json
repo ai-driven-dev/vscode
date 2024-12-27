@@ -59,6 +59,20 @@
   },
   "json.format.enable": true,
 
+  // Format HTML
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  },
+
+  // Format CSS
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  },
+
   // Format Markdown
   "[markdown]": {
     "editor.codeActionsOnSave": {
