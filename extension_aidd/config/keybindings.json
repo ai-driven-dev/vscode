@@ -1,4 +1,9 @@
 [
+  // Open a new folder
+  {
+    "key": "cmd+k cmd+o",
+    "command": "workbench.action.files.openFolder"
+  },
   // Auto-import when pasting code
   {
     "key": "ctrl+shift+v",

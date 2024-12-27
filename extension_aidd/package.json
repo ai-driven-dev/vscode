@@ -50,11 +50,13 @@
     "commands": [
       {
         "command": "ai-driven-dev.createCursorFiles",
-        "title": "Create Cursor Configuration Files"
+        "title": "Create Cursor Default Files",
+        "category": "AI-Driven Dev"
       },
       {
         "command": "ai-driven-dev.createWindsurfFiles",
-        "title": "Create Windsurf Configuration Files"
+        "title": "Create Windsurf Default Files",
+        "category": "AI-Driven Dev"
       }
     ],
     "configuration": {
@@ -92,6 +94,10 @@
       "esbenp.prettier-vscode"
     ],
     "keybindings": [
+      {
+        "key": "cmd+k cmd+o",
+        "command": "workbench.action.files.openFolder"
+      },
       {
         "key": "ctrl+shift+v",
         "command": "editor.action.pasteAs",
@@ -256,5 +262,5 @@
     },
     "unwantedRecommendations": []
   },
-  "built": "2024-12-26T17:45:37.942Z"
+  "built": "2024-12-27T13:48:16.585Z"
 }
