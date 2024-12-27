@@ -122,7 +122,7 @@
       },
       {
         "key": "f12",
-        "command": "editor.action.revealDefinition",
+        "command": "git.openFile",
         "when": "editorTextFocus"
       },
       {
@@ -190,6 +190,16 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
       "json.format.enable": true,
+      "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+      },
+      "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+      },
       "[markdown]": {
         "editor.codeActionsOnSave": {
           "source.fixAll.markdownlint": "explicit"
