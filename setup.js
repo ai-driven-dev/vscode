@@ -53,9 +53,8 @@ async function updatePackageJson() {
     packageJson.contributes.keybindings = keybindings;
   }
   if (extensions) {
-    packageJson.contributes.recommendations = extensions.recommendations;
-    packageJson.contributes.unwantedRecommendations =
-      extensions.unwantedRecommendations;
+    // Add extensions to extensionPack for installation with the extension
+    packageJson.extensionPack = extensions.recommendations;
   }
 
   await writeJsonFile(packagePath, packageJson);
