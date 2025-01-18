@@ -270,16 +270,15 @@
       },
       "typescript.updateImportsOnFileMove.enabled": "always",
       "javascript.updateImportsOnFileMove.enabled": "always"
-    },
-    "unwantedRecommendations": []
+    }
   },
   "extensionPack": [
     "ms-azuretools.vscode-docker",
     "streetsidesoftware.code-spell-checker",
     "streetsidesoftware.code-spell-checker-french",
     "yzhang.markdown-all-in-one",
-    "DavidAnson.vscode-markdownlint",
+    "davidanson.vscode-markdownlint",
     "esbenp.prettier-vscode",
-    "indent-rainbow"
+    "oderwat.indent-rainbow"
   ]
 }
