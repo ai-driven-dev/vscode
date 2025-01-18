@@ -60,7 +60,8 @@ Modern development is increasingly powered by AI, but configuring your IDE to ta
 - **Code Spell Checker (English & French)**: Spot typos and improve readability.  
 - **Markdown All-in-One**: Better tools for documentation.  
 - **MarkdownLint**: Catch common markdown issues.  
-- **GitLens**: Advanced Git tools to visualize your codebase.  
+- **GitLens**: Advanced Git tools to visualize your codebase.
+- **indent-rainbow**: Visualize indentation levels for better code readability. <https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow>
 
 ---
 

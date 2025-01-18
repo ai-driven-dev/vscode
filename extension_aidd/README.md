@@ -1,4 +1,4 @@
-# AI-Driven Dev UDER DEVELOPMENT
+# AI-Driven Dev UNDER DEVELOPMENT
 
 **The fastest way to set up a highly optimized, AI-ready development environment in VS Code.**
 
