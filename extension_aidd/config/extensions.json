@@ -9,11 +9,11 @@
       // Markdown All in One
       "yzhang.markdown-all-in-one",
       // Markdown Linting
-      "DavidAnson.vscode-markdownlint",
+      "davidanson.vscode-markdownlint",
       // Prettier
       "esbenp.prettier-vscode",
       // Rainbow Brackets
-      "indent-rainbow"
+      "oderwat.indent-rainbow"
   ],
   "unwantedRecommendations": []
 }
