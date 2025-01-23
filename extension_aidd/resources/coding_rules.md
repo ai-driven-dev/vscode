@@ -1,6 +1,6 @@
 # Contextual Coding Guidelines
 
-- Use these “When?” sections as micro-rules for specific tasks or outputs.
+- Use these "When?" sections as micro-rules for specific tasks or outputs.
 - Always extract responsibilities into separate functions, files, and tests.
 - Always ask before installing a new package.
 
@@ -18,6 +18,12 @@
 - Use clear, descriptive variable names
 - Limit parameters and prefer immutability
 - Update any reference docs if behavior changes
+
+## When using agent
+
+- Always provide a "trust" or "confidence" level (0-100%) regarding the generated code
+- Include reasoning for the confidence level
+- Verify critical code sections manually
 
 ## Regarding files
 

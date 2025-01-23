@@ -102,9 +102,13 @@
   // Enable git
   "git.enabled": true,
   "git.autofetch": true,
+  // No confirmation when syncing
   "git.confirmSync": false,
-
-  // Git display info
+  // Sync to remote before push
+  "git.pullBeforePush": true,
+  // Rebase when syncing
+  "git.rebaseWhenSync": true,
+  // Git display info (everywhere)
   "scm.diffDecorations": "all",
   "workbench.editor.decorations.badges": true,
 

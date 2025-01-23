@@ -13,7 +13,9 @@
       // Prettier
       "esbenp.prettier-vscode",
       // Rainbow Brackets
-      "oderwat.indent-rainbow"
+      "oderwat.indent-rainbow",
+      // Shell Script Linting and Formatting
+      "timonwong.shellcheck"
   ],
   "unwantedRecommendations": []
 }
