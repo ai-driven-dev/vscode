@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev",
   "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "publisher": "ai-driven-dev",
   "repository": {
     "type": "git",
@@ -218,6 +218,8 @@
       "git.enabled": true,
       "git.autofetch": true,
       "git.confirmSync": false,
+      "git.pullBeforePush": true,
+      "git.rebaseWhenSync": true,
       "scm.diffDecorations": "all",
       "workbench.editor.decorations.badges": true,
       "workbench.startupEditor": "welcomePage",
@@ -241,7 +243,6 @@
         "autofetch"
       ],
       "windsurf.autocompleteSpeed": "fast",
-      "windsurf.enableModelBasedAutoExecution": true,
       "windsurf.cascadeCommandsAllowList": [
         "npm",
         "cd",
@@ -250,8 +251,21 @@
         "touch",
         "git",
         "mv",
-        "cp"
+        "cp",
+        "pip",
+        "python",
+        "yarn",
+        "pnpm",
+        "docker",
+        "docker-compose",
+        "npx",
+        "ldx",
+        "pnpm",
+        "pnpx",
+        "pkill"
       ],
+      "windsurf.autoExecutionPolicy": "shred",
+      "windsurf.rememberLastModelSelection": true,
       "windsurf.openRecentConversation": false,
       "prettier.tabWidth": 2,
       "prettier.useTabs": false,
@@ -279,6 +293,7 @@
     "yzhang.markdown-all-in-one",
     "davidanson.vscode-markdownlint",
     "esbenp.prettier-vscode",
-    "oderwat.indent-rainbow"
+    "oderwat.indent-rainbow",
+    "timonwong.shellcheck"
   ]
 }

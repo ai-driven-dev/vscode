@@ -105,7 +105,7 @@
   // No confirmation when syncing
   "git.confirmSync": false,
   // Sync to remote before push
-  "git.pullBeforePush": true,
+  "git.pullBeforePush": true, // not allowed in extension
   // Rebase when syncing
   "git.rebaseWhenSync": true,
   // Git display info (everywhere)
@@ -164,9 +164,6 @@
   // Fast autocomplete
   "windsurf.autocompleteSpeed": "fast",
 
-  // Auto accept suggestions from chat
-  "windsurf.enableModelBasedAutoExecution": true,
-
   // Allowed commands to be executed without confirmation
   "windsurf.cascadeCommandsAllowList": [
     "npm",
@@ -176,8 +173,23 @@
     "touch",
     "git",
     "mv",
-    "cp"
+    "cp",
+    "pip",
+    "python",
+    "yarn",
+    "pnpm",
+    "docker",
+    "docker-compose",
+    "npx",
+    "ldx",
+    "pnpm",
+    "pnpx",
+    "pkill"
   ],
+
+  // Always auto-execute commands
+  "windsurf.autoExecutionPolicy": "shred",
+  "windsurf.rememberLastModelSelection": true,
 
   // Do not reopen past conversations
   "windsurf.openRecentConversation": false,
