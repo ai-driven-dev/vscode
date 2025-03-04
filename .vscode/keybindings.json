@@ -37,6 +37,11 @@
     "command": "git.openFile",
     "when": "editorTextFocus"
   },
+  {
+    "key": "f12",
+    "command": "editor.action.revealDefinition",
+    "when": "editorFocus"
+  },
 
   // Disable cursor shortcut and remap to VS Code select highlights default shortcut
   {

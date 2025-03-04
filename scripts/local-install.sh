@@ -28,6 +28,7 @@ set -e
 npm run test
 
 # VSCode extension build
+rm -rf ./extension_aidd/out
 node setup.js
 cd ./extension_aidd/
 npm run compile

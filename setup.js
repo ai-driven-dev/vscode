@@ -6,10 +6,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const extensionDir = join(__dirname, "extension_aidd");
 
-const settingsPath = join(extensionDir, "config", "settings.json");
-const packagePath = join(extensionDir, "package.json");
-const keybindingsPath = join(extensionDir, "config", "keybindings.json");
-const extensionsPath = join(extensionDir, "config", "extensions.json");
+const generatedPackage = join(extensionDir, "package.json");
+const workspacePackageBase = join(extensionDir, "config", "base-package.json");
+
+const settingsPath = join(__dirname, ".vscode", "settings.json");
+const keybindingsPath = join(__dirname, ".vscode", "keybindings.json");
+const extensionsPath = join(__dirname, ".vscode", "extensions.json");
 
 export function stripJSONComments(jsonString) {
   return jsonString.replace(
@@ -33,8 +35,9 @@ export async function writeJsonFile(filePath, data) {
 }
 
 async function updatePackageJson() {
-  const packageJson = await readJsonFile(packagePath);
-  if (!packageJson) {
+  const packageJson = await readJsonFile(workspacePackageBase);
+
+  if (!workspacePackageBase) {
     throw new Error("Failed to read package.json");
   }
 
@@ -57,7 +60,7 @@ async function updatePackageJson() {
     packageJson.extensionPack = extensions.recommendations;
   }
 
-  await writeJsonFile(packagePath, packageJson);
+  await writeJsonFile(generatedPackage, packageJson);
 }
 
 updatePackageJson().catch((error) => {

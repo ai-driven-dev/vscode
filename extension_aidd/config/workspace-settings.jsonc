@@ -1,0 +1,12 @@
+{
+  //
+  // This file contains all config that cannot be applied with the VSCode extension's config.
+  //
+
+  // Sync to remote before push
+  "git.pullBeforePush": true,
+
+  // Blank start
+  "workbench.startupEditor": "welcomePage",
+  "window.restoreWindows": "none"
+}
