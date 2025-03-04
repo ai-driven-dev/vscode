@@ -10,6 +10,12 @@ Collection of:
 
 > **Get the ultimate IDE for coding with AI—no configuration needed.**
 
+## Supported Language
+
+- PHP
+- JavaScript
+- TypeScript
+
 ## TODO
 
 - [ ] `workspace-settings.json` : à télécharger et rajouter dans `.vscode/settings.json` en mergant

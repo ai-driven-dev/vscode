@@ -1,0 +1,24 @@
+{
+  "PHP Class": {
+    "prefix": "phpclass",
+    "body": [
+      "declare(strict_types=1);",
+      "",
+      "namespace ${1:App\\\\}${2:Namespace};",
+      "",
+      "class ${3:ClassName}",
+      "{",
+      "    public function __construct(",
+      "        ${4:private string \\$property}",
+      "    ) {",
+      "    }",
+      "",
+      "    ${5:public function ${6:methodName}(${7:}): ${8:void}",
+      "    {",
+      "        ${9:// TODO: Implement method}",
+      "    }}",
+      "}"
+    ],
+    "description": "Create a new PHP 8 class with constructor property promotion"
+  }
+}

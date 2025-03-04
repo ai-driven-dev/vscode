@@ -70,31 +70,28 @@
   },
   "json.format.enable": true,
 
-  // Format HTML
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
   },
-
-  // Format CSS
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
   },
-
-  // Format Markdown
   "[markdown]": {
     "editor.codeActionsOnSave": {
-      "source.fixAll.markdownlint": "true"
+      "source.fixAll.markdownlint": "always"
     }
   },
-
-  // Format Prisma
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
+  "[php]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   // EsLint
   "eslint.validate": ["javascript", "typescript"],
   "eslint.format.enable": true,
@@ -220,6 +217,7 @@
   "prettier.trailingComma": "all",
   "prettier.bracketSpacing": true,
   "prettier.printWidth": 100,
+  "prettier.php.enabled": true,
   "prettier": {
     "overrides": [
       {
@@ -235,6 +233,11 @@
    ** LANGUAGES
    **/
 
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+
   /** Typescript **/
 
   // Update imports on file move
@@ -243,10 +246,7 @@
   /** Javascript **/
   "javascript.updateImportsOnFileMove.enabled": "always",
 
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
-  },
+  /** PHP **/
 
   /**
    ** TERMINAL

@@ -33,13 +33,29 @@
   ],
   "license": "GPL-3.0-or-later",
   "devDependencies": {
+    "@prettier/plugin-php": "^0.22.4",
     "@types/node": "^22.10.2",
     "@types/vscode": "^1.93.0",
     "@vscode/vsce": "^3.2.2",
     "ovsx": "^0.10.1",
+    "prettier": "^3.5.3",
     "typescript": "^5.7.2"
   },
   "contributes": {
+    "snippets": [
+      {
+        "language": "php",
+        "path": "./snippets/php.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/typescriptreact.json"
+      }
+    ],
     "configurationDefaults": {
       "breadcrumbs.enabled": true,
       "explorer.compactFolders": false,
@@ -53,6 +69,8 @@
       "files.autoSave": "afterDelay",
       "files.autoSaveDelay": 1000,
       "files.eol": "\n",
+      "files.insertFinalNewline": true,
+      "files.trimFinalNewlines": true,
       "editor.linkedEditing": true,
       "editor.renameOnType": true,
       "editor.formatOnSave": true,
