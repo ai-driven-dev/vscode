@@ -40,6 +40,12 @@
   "files.eol": "\n",
 
   /**
+   ** FILEs
+   **/
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+
+  /**
    ** EDITOR
    **/
 
