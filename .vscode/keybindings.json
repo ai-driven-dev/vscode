@@ -46,11 +46,15 @@
   // Disable cursor shortcut and remap to VS Code select highlights default shortcut
   {
     "key": "shift+cmd+l",
-    "command": "-addCursorsAtSearchResults" // Désactive Cursor
+    "command": "-addCursorsAtSearchResults"
   },
   {
     "key": "shift+cmd+l",
-    "command": "editor.action.selectHighlights", // Associe VS Code par défaut
+    "command": "-aichat.insertselectionintochat"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "editor.action.selectHighlights",
     "when": "editorFocus"
   },
 
