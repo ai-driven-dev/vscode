@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev",
   "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "publisher": "ai-driven-dev",
   "scripts": {
     "compile": "tsc -p ./"
@@ -96,11 +96,14 @@
       },
       "[markdown]": {
         "editor.codeActionsOnSave": {
-          "source.fixAll.markdownlint": "true"
+          "source.fixAll.markdownlint": "always"
         }
       },
       "[prisma]": {
         "editor.defaultFormatter": "Prisma.prisma"
+      },
+      "[php]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
       "eslint.validate": [
         "javascript",
@@ -173,6 +176,7 @@
       "prettier.trailingComma": "all",
       "prettier.bracketSpacing": true,
       "prettier.printWidth": 100,
+      "prettier.php.enabled": true,
       "prettier": {
         "overrides": [
           {
@@ -183,12 +187,12 @@
           }
         ]
       },
-      "typescript.updateImportsOnFileMove.enabled": "always",
-      "javascript.updateImportsOnFileMove.enabled": "always",
       "emmet.includeLanguages": {
         "javascript": "javascriptreact",
         "typescript": "typescriptreact"
       },
+      "typescript.updateImportsOnFileMove.enabled": "always",
+      "javascript.updateImportsOnFileMove.enabled": "always",
       "terminal.integrated.shellIntegration.enabled": true
     },
     "keybindings": [
