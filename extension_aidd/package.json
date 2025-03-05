@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev",
   "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "publisher": "ai-driven-dev",
   "scripts": {
     "compile": "tsc -p ./"
@@ -287,12 +287,13 @@
     ]
   },
   "extensionPack": [
-    "ms-azuretools.vscode-docker",
     "streetsidesoftware.code-spell-checker",
     "streetsidesoftware.code-spell-checker-french",
+    "ms-azuretools.vscode-docker",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
     "yzhang.markdown-all-in-one",
     "davidanson.vscode-markdownlint",
-    "esbenp.prettier-vscode",
-    "eamodio.gitlens"
+    "esbenp.prettier-vscode"
   ]
 }
