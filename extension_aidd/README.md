@@ -16,12 +16,10 @@ Collection of:
 - JavaScript
 - TypeScript
 
-## TODO
+## Coming Soon
 
-- [ ] `workspace-settings.json` : à télécharger et rajouter dans `.vscode/settings.json` en mergant
-- [ ] Custom single file rules copilot ingore, windsurf ignore
-- [ ] Multiple file rules in Cursor
-- [ ]
+- Language Support for: Java, Kotlin
+- Editor Config
 
 ## Shortcuts
 
