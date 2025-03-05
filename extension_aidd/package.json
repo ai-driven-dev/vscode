@@ -42,6 +42,12 @@
     "typescript": "^5.7.2"
   },
   "contributes": {
+    "commands": [
+      {
+        "command": "aidd.createPrettierConfig",
+        "title": "AI-Driven Dev: Create optimized Prettier Configuration File"
+      }
+    ],
     "snippets": [
       {
         "language": "php",
@@ -80,10 +86,11 @@
       "files.insertFinalNewline": true,
       "files.trimFinalNewlines": true,
       "editor.linkedEditing": true,
+      "editor.links": true,
       "editor.renameOnType": true,
       "editor.formatOnSave": true,
       "editor.formatOnPaste": true,
-      "editor.formatOnSaveMode": "modificationsIfAvailable",
+      "editor.formatOnSaveMode": "modifications",
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -178,30 +185,25 @@
       "windsurf.autoExecutionPolicy": "shred",
       "windsurf.rememberLastModelSelection": true,
       "windsurf.openRecentConversation": false,
-      "prettier.tabWidth": 2,
-      "prettier.useTabs": false,
-      "prettier.singleQuote": false,
-      "prettier.trailingComma": "all",
-      "prettier.bracketSpacing": true,
-      "prettier.printWidth": 100,
-      "prettier.php.enabled": true,
-      "prettier": {
-        "overrides": [
-          {
-            "files": "*.jsonc",
-            "options": {
-              "parser": "json"
-            }
-          }
-        ]
-      },
       "emmet.includeLanguages": {
         "javascript": "javascriptreact",
         "typescript": "typescriptreact"
       },
       "typescript.updateImportsOnFileMove.enabled": "always",
       "javascript.updateImportsOnFileMove.enabled": "always",
-      "terminal.integrated.shellIntegration.enabled": true
+      "intelephense.files.maxSize": 1000000,
+      "intelephense.files.associations": [
+        "*.php"
+      ],
+      "intelephense.environment.includePaths": [
+        "./extension_aidd/playground/"
+      ],
+      "path-intellisense.extensionOnImport": true,
+      "path-intellisense.autoSlashAfterDirectory": true,
+      "terminal.integrated.shellIntegration.enabled": true,
+      "cSpell.words": [
+        "aidd"
+      ]
     },
     "keybindings": [
       {
@@ -218,7 +220,7 @@
         }
       },
       {
-        "key": "cmd+n",
+        "key": "alt+n",
         "command": "explorer.newFile"
       },
       {

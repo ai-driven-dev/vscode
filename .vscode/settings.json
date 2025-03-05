@@ -211,27 +211,6 @@
   // Do not reopen past conversations
   "windsurf.openRecentConversation": false,
 
-  /** Prettier **/
-
-  // Simple configuration
-  "prettier.tabWidth": 2,
-  "prettier.useTabs": false,
-  "prettier.singleQuote": false,
-  "prettier.trailingComma": "all",
-  "prettier.bracketSpacing": true,
-  "prettier.printWidth": 100,
-  "prettier.php.enabled": true,
-  "prettier": {
-    "overrides": [
-      {
-        "files": "*.jsonc",
-        "options": {
-          "parser": "json"
-        }
-      }
-    ]
-  },
-
   /**
    ** LANGUAGES
    **/
@@ -252,11 +231,16 @@
   /** PHP **/
   "intelephense.files.maxSize": 1000000,
   "intelephense.files.associations": ["*.php"],
+  "intelephense.environment.includePaths": ["./extension_aidd/playground/"],
+
+  "path-intellisense.extensionOnImport": true,
+  "path-intellisense.autoSlashAfterDirectory": true,
 
   /**
    ** TERMINAL
    **/
 
   // Disable terminal bell
-  "terminal.integrated.shellIntegration.enabled": true
+  "terminal.integrated.shellIntegration.enabled": true,
+  "cSpell.words": ["aidd"]
 }

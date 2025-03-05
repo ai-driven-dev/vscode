@@ -1,7 +1,10 @@
 import * as vscode from "vscode";
 import * as packageJSON from "../package.json";
+import { createPrettierConfigFromTemplate } from "./commands/prettierCommands";
 
 const WELCOME_KEY = "aidd.extensionWelcomeShown";
+
+export const COMMAND_PRETTIER_CONFIG = "aidd.createPrettierConfig";
 
 export async function activate(context: vscode.ExtensionContext) {
   const hasShownWelcome = context.globalState.get<boolean>(WELCOME_KEY);
@@ -15,9 +18,7 @@ export async function activate(context: vscode.ExtensionContext) {
     );
 
     if (choice === "GitHub") {
-      vscode.env.openExternal(
-        vscode.Uri.parse("https://github.com/ai-driven-dev/vscode"),
-      );
+      vscode.env.openExternal(vscode.Uri.parse("https://github.com/ai-driven-dev/vscode"));
     }
 
     // Attendez explicitement que la mise à jour soit terminée
@@ -28,6 +29,11 @@ export async function activate(context: vscode.ExtensionContext) {
       console.error("Failed to update global state:", err);
     }
   }
+
+  // Enregistrer la commande
+  context.subscriptions.push(
+    vscode.commands.registerCommand(COMMAND_PRETTIER_CONFIG, createPrettierConfigFromTemplate),
+  );
 }
 
 export function deactivate() {}

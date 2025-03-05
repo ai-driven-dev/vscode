@@ -1,3 +1,17 @@
 {
-  "plugins": ["@prettier/plugin-php"]
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": false,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "printWidth": 100,
+  "plugins": ["@prettier/plugin-php"],
+  "overrides": [
+    {
+      "files": "*.jsonc",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
 }
