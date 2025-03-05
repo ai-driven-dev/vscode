@@ -1,0 +1,7 @@
+{
+  "Java Class": {
+    "prefix": "jclass",
+    "body": ["public class ${1:ClassName} {", "\t$0", "}"],
+    "description": "Create a new Java class"
+  }
+}

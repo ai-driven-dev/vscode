@@ -1,0 +1,7 @@
+{
+  "Kotlin Class": {
+    "prefix": "kclass",
+    "body": ["class ${1:ClassName} {", "\t$0", "}"],
+    "description": "Create a new Kotlin class"
+  }
+}

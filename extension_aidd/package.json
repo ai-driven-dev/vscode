@@ -54,6 +54,14 @@
       {
         "language": "typescriptreact",
         "path": "./snippets/typescriptreact.json"
+      },
+      {
+        "language": "kotlin",
+        "path": "./snippets/kotlin.json"
+      },
+      {
+        "language": "java",
+        "path": "./snippets/java.json"
       }
     ],
     "configurationDefaults": {

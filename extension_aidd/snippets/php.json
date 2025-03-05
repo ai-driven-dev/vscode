@@ -1,5 +1,6 @@
 {
   "PHP Class": {
+    "description": "Create a new PHP 8 class with constructor property promotion",
     "prefix": "phpclass",
     "body": [
       "declare(strict_types=1);",
@@ -18,7 +19,6 @@
       "        ${9:// TODO: Implement method}",
       "    }}",
       "}"
-    ],
-    "description": "Create a new PHP 8 class with constructor property promotion"
+    ]
   }
 }
