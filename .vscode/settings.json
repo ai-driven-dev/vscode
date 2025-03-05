@@ -52,13 +52,16 @@
   // Editing closing tag on type
   "editor.linkedEditing": true,
 
+  // Force link hover click
+  "editor.links": true,
+
   // Rename on type
   "editor.renameOnType": true,
 
   // Format on save
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.formatOnSaveMode": "modifications",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
   // Format JSON
@@ -247,6 +250,8 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
 
   /** PHP **/
+  "intelephense.files.maxSize": 1000000,
+  "intelephense.files.associations": ["*.php"],
 
   /**
    ** TERMINAL

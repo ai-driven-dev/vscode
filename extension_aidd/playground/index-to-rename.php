@@ -9,6 +9,6 @@ class TestRename
 {
     public function test()
     {
-        return "test";
+        echo "Hello from TestRename.";
     }
 }
