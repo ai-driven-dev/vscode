@@ -16,7 +16,7 @@ const extensionsPath = join(__dirname, ".vscode", "extensions.json");
 export function stripJSONComments(jsonString) {
   return jsonString.replace(
     /\\"|"(?:\\"|[^"])*"|(\/\/.*|\/\*[\s\S]*?\*\/)/g,
-    (m, g) => (g ? "" : m)
+    (m, g) => (g ? "" : m),
   );
 }
 
@@ -41,6 +41,13 @@ async function updatePackageJson() {
     throw new Error("Failed to read package.json");
   }
 
+  // paste readme in extension
+  const readmePath = join(__dirname, "README.md");
+  const readmeContent = await readFile(readmePath, "utf8");
+
+  await writeFile(join(extensionDir, "README.md"), readmeContent);
+
+  // get config files
   const configurationDefaults = await readJsonFile(settingsPath);
   const keybindings = await readJsonFile(keybindingsPath);
   const extensions = await readJsonFile(extensionsPath);

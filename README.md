@@ -146,6 +146,7 @@ The following extensions are recommended for the best experience:
 ### Recommended extensions for specific languages
 
 - [PHP Prettier](https://github.com/prettier/plugin-php)
+- [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)
 - [Kotlin](https://marketplace.visualstudio.com/items?itemName=fwcd.kotlin)
 - [Java](https://marketplace.visualstudio.com/items?itemName=Oracle.oracle-java)
 
