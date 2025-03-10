@@ -14,6 +14,10 @@
     "yzhang.markdown-all-in-one",
     // Markdown Linting
     "davidanson.vscode-markdownlint",
+    // Mermaid Preview
+    "MermaidChart.vscode-mermaid-chart",
+    // OpenAI ChatGPT Integration
+    "openai.chatgpt",
     // Prettier
     "esbenp.prettier-vscode"
   ],
