@@ -19,7 +19,9 @@
     // OpenAI ChatGPT Integration
     "openai.chatgpt",
     // Prettier
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    // RepoMix
+    "DorianMassoulier.repomix-runner",
   ],
   "unwantedRecommendations": []
 }

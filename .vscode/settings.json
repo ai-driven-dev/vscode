@@ -34,7 +34,7 @@
 
   // Auto save
   "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000,
+  "files.autoSaveDelay": 200,
 
   // End of line
   "files.eol": "\n",
