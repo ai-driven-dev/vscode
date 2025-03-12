@@ -21,7 +21,7 @@
     // Prettier
     "esbenp.prettier-vscode",
     // RepoMix
-    "DorianMassoulier.repomix-runner",
+    "DorianMassoulier.repomix-runner"
   ],
   "unwantedRecommendations": []
 }

@@ -40,13 +40,13 @@ cd ./extension_aidd/
 npm run compile # compile the extension
 npx vsce package
 
+# Publish to VS Code Marketplace
+echo "Publishing to VS Code Marketplace..."
+npx vsce publish 
+
 # Publish to Open VSX Registry
 echo "Publishing to Open VSX Registry..."
 npx ovsx publish *.vsix --pat $OPEN_VSX_TOKEN
-
-# Publish to VS Code Marketplace
-echo "Publishing to VS Code Marketplace..."
-npx vsce publish
 
 # Clean up
 rm *.vsix
