@@ -78,6 +78,11 @@
     "command": "editor.action.deleteLines",
     "when": "editorTextFocus"
   },
+  {
+    "key": "cmd+y",
+    "command": "editor.action.deleteLines",
+    "when": "editorTextFocus"
+  },
 
   // When opening a chat, close the sidebar
   {

@@ -145,6 +145,11 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
 
+  // Cursor Rules edition
+  "workbench.editorAssociations": {
+    "*.mdc": "default"
+  },
+
   /**
    ** CSS
    **/
