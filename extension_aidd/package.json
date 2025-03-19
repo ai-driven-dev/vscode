@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev",
   "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "publisher": "ai-driven-dev",
   "scripts": {
     "compile": "tsc -p ./"
@@ -42,6 +42,10 @@
       {
         "command": "aidd.createPrettierConfig",
         "title": "AI-Driven Dev: Create optimized Prettier Configuration File"
+      },
+      {
+        "command": "aidd.updateCursorRules",
+        "title": "AI-Driven Dev: Update Cursor Rules for AI-Driven Dev Community"
       }
     ],
     "snippets": [
@@ -144,6 +148,9 @@
       "workbench.editor.limit.value": 8,
       "workbench.editor.enablePreview": false,
       "workbench.editor.enablePreviewFromQuickOpen": false,
+      "workbench.editorAssociations": {
+        "*.mdc": "default"
+      },
       "css.hover.documentation": false,
       "markdown.extension.toc.updateOnSave": true,
       "markdown.extension.toc.levels": "2..6",
@@ -265,6 +272,11 @@
       },
       {
         "key": "shift+cmd+k",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "cmd+y",
         "command": "editor.action.deleteLines",
         "when": "editorTextFocus"
       },

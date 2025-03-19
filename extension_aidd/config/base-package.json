@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev",
   "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
-  "version": "0.3.6",
+  "version": "0.4.0",
   "publisher": "ai-driven-dev",
   "scripts": {
     "compile": "tsc -p ./"
@@ -30,6 +30,10 @@
       {
         "command": "aidd.createPrettierConfig",
         "title": "AI-Driven Dev: Create optimized Prettier Configuration File"
+      },
+      {
+        "command": "aidd.updateCursorRules",
+        "title": "AI-Driven Dev: Update Cursor Rules for AI-Driven Dev Community"
       }
     ],
     "snippets": [
