@@ -64,6 +64,19 @@
   "editor.formatOnSaveMode": "modifications",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
+  // Fira Code font
+  // "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace", // default
+  // "editor.fontFamily": "Fira Code",
+  // "editor.fontFamily": "'JetBrains Mono'",
+  // "editor.fontFamily": "'hack'",
+  "editor.fontFamily": "'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
+  // "editor.fontFamily": "iosevka",
+  "editor.fontLigatures": true,
+
+  // Cursor
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+
   // Format JSON
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -111,6 +124,10 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 100,
   "editor.wrappingIndent": "same",
+
+  // Enable bracket pair colorization
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
 
   // Disable preview mode
   "editor.minimap.enabled": false,

@@ -142,6 +142,7 @@ The following extensions are recommended for the best experience:
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Markdown Lint](https://marketplace.visualstudio.com/items?itemName=davidanson.vscode-markdownlint)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
 
 ### Recommended extensions for specific languages
 

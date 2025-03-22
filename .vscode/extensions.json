@@ -20,6 +20,8 @@
     "openai.chatgpt",
     // Prettier
     "esbenp.prettier-vscode",
+    // Rainbow CSV
+    "mechatroner.rainbow-csv",
     // RepoMix
     "DorianMassoulier.repomix-runner"
   ],
