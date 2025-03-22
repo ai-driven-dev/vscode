@@ -1,5 +1,10 @@
 {
   /**
+   ** EXTENSIONS
+   **/
+  "extensions.autoUpdate": true,
+
+  /**
    ** EXPLORER
    **/
 

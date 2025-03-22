@@ -24,6 +24,12 @@
     "command": "typescript.removeUnusedImports"
   },
 
+  // Reindent lines
+  {
+    "key": "ctrl+s",
+    "command": "editor.action.reindentlines"
+  },
+
   // Update TOC on save
   {
     "key": "ctrl+s",
