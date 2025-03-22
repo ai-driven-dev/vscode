@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev",
   "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "publisher": "ai-driven-dev",
   "scripts": {
     "compile": "tsc -p ./"
@@ -92,6 +92,10 @@
       "editor.formatOnPaste": true,
       "editor.formatOnSaveMode": "modifications",
       "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.fontFamily": "'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
+      "editor.fontLigatures": true,
+      "editor.cursorBlinking": "expand",
+      "editor.cursorSmoothCaretAnimation": "on",
       "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
@@ -134,6 +138,8 @@
       "editor.wordWrap": "bounded",
       "editor.wordWrapColumn": 100,
       "editor.wrappingIndent": "same",
+      "editor.guides.bracketPairs": true,
+      "editor.bracketPairColorization.enabled": true,
       "editor.minimap.enabled": false,
       "git.enabled": true,
       "git.autofetch": true,
@@ -307,6 +313,7 @@
     "MermaidChart.vscode-mermaid-chart",
     "openai.chatgpt",
     "esbenp.prettier-vscode",
+    "mechatroner.rainbow-csv",
     "DorianMassoulier.repomix-runner"
   ]
 }
