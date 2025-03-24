@@ -52,10 +52,6 @@ async function updatePackageJson() {
   const keybindings = await readJsonFile(keybindingsPath);
   const extensions = await readJsonFile(extensionsPath);
 
-  if (!packageJson.contributes) {
-    packageJson.contributes = {};
-  }
-
   if (configurationDefaults) {
     packageJson.contributes.configurationDefaults = configurationDefaults;
   }
