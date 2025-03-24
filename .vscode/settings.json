@@ -69,13 +69,10 @@
   "editor.formatOnSaveMode": "modifications",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-  // Fira Code font
+  // Custom Font
   // "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace", // default
-  // "editor.fontFamily": "Fira Code",
-  // "editor.fontFamily": "'JetBrains Mono'",
-  // "editor.fontFamily": "'hack'",
-  "editor.fontFamily": "'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
-  // "editor.fontFamily": "iosevka",
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  // "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
 
   // Cursor
@@ -132,7 +129,9 @@
 
   // Enable bracket pair colorization
   "editor.guides.bracketPairs": true,
+  "editor.guides.indentation": true,
   "editor.bracketPairColorization.enabled": true,
+  "editor.guides.highlightActiveBracketPair": true,
 
   // Disable preview mode
   "editor.minimap.enabled": false,
@@ -201,7 +200,7 @@
 
   // cSpell
   "cSpell.language": "en,fr",
-  "cSpell.userWords": ["ai-driven-dev", "autofetch"],
+  "cSpell.userWords": ["ai-driven-dev", "autofetch", "slugified", "aidd"],
 
   /** Windsurf **/
 
