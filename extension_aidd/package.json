@@ -261,7 +261,7 @@
         "when": "editorFocus"
       },
       {
-        "key": "opt+cmd+m",
+        "key": "ctrl+m",
         "command": "cursor.generateGitCommitMessage"
       },
       {

@@ -51,8 +51,14 @@
 
   // Cursor shortcuts
   {
-    "key": "opt+cmd+m",
+    "key": "ctrl+m",
     "command": "cursor.generateGitCommitMessage"
+  },
+
+  // GitLens
+  {
+    "key": "ctrl+m",
+    "command": "gitlens.generateCommitMessage"
   },
 
   // Disable cursor shortcut and remap to VS Code select highlights default shortcut
