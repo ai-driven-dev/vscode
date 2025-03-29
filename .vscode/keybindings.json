@@ -49,6 +49,12 @@
     "when": "editorFocus"
   },
 
+  // Cursor shortcuts
+  {
+    "key": "cmd+m",
+    "command": "cursor.generateGitCommitMessage"
+  },
+
   // Disable cursor shortcut and remap to VS Code select highlights default shortcut
   {
     "key": "shift+cmd+l",
