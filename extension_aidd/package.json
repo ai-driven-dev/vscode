@@ -2,7 +2,7 @@
   "name": "ai-driven-dev",
   "displayName": "AI-Driven Dev",
   "description": "Optimized VSCode configuration for AI-powered development. Includes curated settings, keybindings, and extensions to enhance productivity with AI tools like GitHub Copilot, Cursor, and Windsurf.",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "publisher": "ai-driven-dev",
   "scripts": {
     "compile": "tsc -p ./"
@@ -71,6 +71,7 @@
       }
     ],
     "configurationDefaults": {
+      "extensions.autoUpdate": true,
       "breadcrumbs.enabled": true,
       "explorer.compactFolders": false,
       "explorer.confirmDelete": false,
@@ -92,7 +93,7 @@
       "editor.formatOnPaste": true,
       "editor.formatOnSaveMode": "modifications",
       "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.fontFamily": "'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
+      "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
       "editor.fontLigatures": true,
       "editor.cursorBlinking": "expand",
       "editor.cursorSmoothCaretAnimation": "on",
@@ -139,7 +140,9 @@
       "editor.wordWrapColumn": 100,
       "editor.wrappingIndent": "same",
       "editor.guides.bracketPairs": true,
+      "editor.guides.indentation": true,
       "editor.bracketPairColorization.enabled": true,
+      "editor.guides.highlightActiveBracketPair": true,
       "editor.minimap.enabled": false,
       "git.enabled": true,
       "git.autofetch": true,
@@ -167,7 +170,9 @@
       "cSpell.language": "en,fr",
       "cSpell.userWords": [
         "ai-driven-dev",
-        "autofetch"
+        "autofetch",
+        "slugified",
+        "aidd"
       ],
       "windsurf.autocompleteSpeed": "fast",
       "windsurf.cascadeCommandsAllowList": [
@@ -238,6 +243,10 @@
       },
       {
         "key": "ctrl+s",
+        "command": "editor.action.reindentlines"
+      },
+      {
+        "key": "ctrl+s",
         "command": "-markdown.extension.toc.update",
         "when": "resourceExtname == .md"
       },
@@ -250,6 +259,10 @@
         "key": "f12",
         "command": "editor.action.revealDefinition",
         "when": "editorFocus"
+      },
+      {
+        "key": "opt+cmd+m",
+        "command": "cursor.generateGitCommitMessage"
       },
       {
         "key": "shift+cmd+l",

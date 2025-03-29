@@ -51,7 +51,7 @@
 
   // Cursor shortcuts
   {
-    "key": "cmd+m",
+    "key": "opt+cmd+m",
     "command": "cursor.generateGitCommitMessage"
   },
 
