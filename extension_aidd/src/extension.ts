@@ -1,12 +1,10 @@
 import * as vscode from "vscode";
 import * as packageJSON from "../package.json";
-import { updateCursorRules } from "./commands/cursorRulesCommands";
 import { createPrettierConfigFromTemplate } from "./commands/prettierCommands";
 
 const WELCOME_KEY = "aidd.extensionWelcomeShown";
 
 export const COMMAND_PRETTIER_CONFIG = "aidd.createPrettierConfig";
-export const COMMAND_CURSOR_RULES = "aidd.updateCursorRules";
 
 export async function activate(context: vscode.ExtensionContext) {
   const hasShownWelcome = context.globalState.get<boolean>(WELCOME_KEY);
@@ -35,7 +33,6 @@ export async function activate(context: vscode.ExtensionContext) {
   // Enregistrer les commandes
   context.subscriptions.push(
     vscode.commands.registerCommand(COMMAND_PRETTIER_CONFIG, createPrettierConfigFromTemplate),
-    vscode.commands.registerCommand(COMMAND_CURSOR_RULES, updateCursorRules),
   );
 }
 

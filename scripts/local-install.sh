@@ -35,15 +35,17 @@ npm run compile
 npx @vscode/vsce package
 
 # Extension installation
-declare -a installers=("cursor")
+declare -a installers=("cursor" "code" "windsurf")
 
 for installer in "${installers[@]}"; do
   if [ -x "$(command -v "$installer")" ]; then
     echo "-> $installer"
     "$installer" --disable-extension "ai-driven-dev.ai-driven-dev"
-    "$installer" --install-extension *.vsix
+    "$installer" --install-extension *.vsix &
   fi
 done
+
+wait
 
 # Cleanup
 rm -rf *.vsix 
